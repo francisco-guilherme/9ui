@@ -482,6 +482,16 @@ export const demoRegistry: DemoRegistry = {
 		category: "chart",
 		path: "src/components/demos/chart/chart-scatter.tsx",
 	},
+	"checkbox-group-demo": {
+		source:
+			'"use client"\n\nimport { useState } from "react"\n\nimport { Checkbox } from "@/components/ui/checkbox"\nimport { CheckboxGroup } from "@/components/ui/checkbox-group"\nimport { Label } from "@/components/ui/label"\n\nconst groceries = ["milk", "cheese", "bread", "apples"]\n\nexport default function CheckboxGroupDemo() {\n\tconst [checkedItems, setCheckedItems] = useState<string[]>([])\n\n\treturn (\n\t\t<CheckboxGroup\n\t\t\taria-labelledby="groceries"\n\t\t\tvalue={checkedItems}\n\t\t\tonValueChange={(value) => setCheckedItems(value)}\n\t\t\tallValues={groceries}\n\t\t>\n\t\t\t<Label className="flex items-center gap-2">\n\t\t\t\t<Checkbox\n\t\t\t\t\tparent\n\t\t\t\t\tindeterminate={\n\t\t\t\t\t\tcheckedItems.length > 0 && checkedItems.length !== groceries.length\n\t\t\t\t\t}\n\t\t\t\t/>\n\t\t\t\tGroceries\n\t\t\t</Label>\n\n\t\t\t{groceries.map((grocery) => (\n\t\t\t\t<Label className="ml-4 flex items-center gap-2" key={grocery}>\n\t\t\t\t\t<Checkbox name={grocery} />\n\t\t\t\t\t{grocery.charAt(0).toUpperCase() + grocery.slice(1)}\n\t\t\t\t</Label>\n\t\t\t))}\n\t\t</CheckboxGroup>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/checkbox-group/checkbox-group-demo")
+		),
+		title: "checkbox-group-demo",
+		category: "checkbox-group",
+		path: "src/components/demos/checkbox-group/checkbox-group-demo.tsx",
+	},
 	"checkbox-demo": {
 		source:
 			'import { Checkbox } from "@/components/ui/checkbox"\n\nexport default function CheckboxDemo() {\n\treturn <Checkbox />\n}\n',
@@ -514,7 +524,7 @@ export const demoRegistry: DemoRegistry = {
 	},
 	"checkbox-with-label": {
 		source:
-			'import { Checkbox } from "@/components/ui/checkbox"\nimport { Label } from "@/components/ui/label"\n\nexport default function CheckboxWithLabel() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Checkbox id="terms" />\n\t\t\t<Label htmlFor="terms">Accept</Label>\n\t\t</div>\n\t)\n}\n',
+			'import { Checkbox } from "@/components/ui/checkbox"\nimport { Label } from "@/components/ui/label"\n\nexport default function CheckboxWithLabel() {\n\treturn (\n\t\t<Label className="flex items-center gap-2">\n\t\t\t<Checkbox />\n\t\t\tAccept\n\t\t</Label>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/checkbox/checkbox-with-label")
 		),

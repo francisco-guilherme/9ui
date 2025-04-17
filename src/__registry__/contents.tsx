@@ -159,6 +159,19 @@ export const contentRegistry: ContentRegistry = {
 			{ label: "Chart", path: "/docs/components/chart" },
 		],
 	},
+	"components/checkbox-group": {
+		type: "file",
+		path: "components/checkbox-group.mdx",
+		meta: {
+			title: "Checkbox Group",
+			description: "Manages selection state across multiple checkboxes.",
+		},
+		urlPath: "components/checkbox-group",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Checkbox Group", path: "/docs/components/checkbox-group" },
+		],
+	},
 	"components/checkbox": {
 		type: "file",
 		path: "components/checkbox.mdx",

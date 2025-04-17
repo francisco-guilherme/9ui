@@ -112,6 +112,11 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/checkbox",
 				},
 				{
+					title: "Checkbox Group",
+					href: "/docs/components/checkbox-group",
+					label: "New",
+				},
+				{
 					title: "Collapsible",
 					href: "/docs/components/collapsible",
 				},
@@ -146,7 +151,6 @@ export const navConfig: NavConfig = {
 				{
 					title: "Emoji Picker",
 					href: "/docs/components/emoji-picker",
-					label: "New",
 				},
 				{
 					title: "Form",
@@ -239,7 +243,6 @@ export const navConfig: NavConfig = {
 				{
 					title: "Toolbar",
 					href: "/docs/components/toolbar",
-					label: "New",
 				},
 				{
 					title: "Tooltip",
