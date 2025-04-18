@@ -173,6 +173,11 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/menubar",
 				},
 				{
+					title: "Meter",
+					href: "/docs/components/meter",
+					label: "New",
+				},
+				{
 					title: "Popover",
 					href: "/docs/components/popover",
 				},

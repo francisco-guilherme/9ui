@@ -5,14 +5,16 @@ import { CheckboxGroup as BaseCheckboxGroup } from "@base-ui-components/react/ch
 
 import { cn } from "@/lib/utils"
 
-const CheckboxGroup = ({
-	className,
-	...props
-}: React.ComponentPropsWithoutRef<typeof BaseCheckboxGroup>) => (
+const CheckboxGroup = React.forwardRef<
+	HTMLDivElement,
+	React.ComponentPropsWithoutRef<typeof BaseCheckboxGroup>
+>(({ className, ...props }, ref) => (
 	<BaseCheckboxGroup
+		ref={ref}
 		className={cn("flex flex-col items-start gap-1", className)}
 		{...props}
 	/>
-)
+))
+CheckboxGroup.displayName = "CheckboxGroup"
 
 export { CheckboxGroup }

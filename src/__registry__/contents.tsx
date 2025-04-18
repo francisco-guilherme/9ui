@@ -368,6 +368,19 @@ export const contentRegistry: ContentRegistry = {
 			{ label: "Menubar", path: "/docs/components/menubar" },
 		],
 	},
+	"components/meter": {
+		type: "file",
+		path: "components/meter.mdx",
+		meta: {
+			title: "Meter",
+			description: "Used to represent a value within a fixed scale.",
+		},
+		urlPath: "components/meter",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Meter", path: "/docs/components/meter" },
+		],
+	},
 	"components/popover": {
 		type: "file",
 		path: "components/popover.mdx",
