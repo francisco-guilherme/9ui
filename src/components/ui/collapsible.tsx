@@ -8,7 +8,7 @@ const Collapsible = BaseCollapsible.Root
 const CollapsibleTrigger = BaseCollapsible.Trigger
 
 const CollapsibleContent = React.forwardRef<
-	HTMLButtonElement,
+	HTMLDivElement,
 	BaseCollapsible.Panel.Props
 >(({ className, ...props }, ref) => (
 	<BaseCollapsible.Panel
