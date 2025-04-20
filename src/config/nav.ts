@@ -218,6 +218,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/slider",
 				},
 				{
+					title: "Sonner",
+					href: "/docs/components/sonner",
+				},
+				{
 					title: "Switch",
 					href: "/docs/components/switch",
 				},
@@ -232,10 +236,6 @@ export const navConfig: NavConfig = {
 				{
 					title: "Textarea",
 					href: "/docs/components/textarea",
-				},
-				{
-					title: "Toast",
-					href: "/docs/components/toast",
 				},
 				{
 					title: "Toggle",

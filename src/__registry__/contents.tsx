@@ -510,6 +510,19 @@ export const contentRegistry: ContentRegistry = {
 			{ label: "Slider", path: "/docs/components/slider" },
 		],
 	},
+	"components/sonner": {
+		type: "file",
+		path: "components/sonner.mdx",
+		meta: {
+			title: "Sonner",
+			description: "Displays a message to the user in a toast.",
+		},
+		urlPath: "components/sonner",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Sonner", path: "/docs/components/sonner" },
+		],
+	},
 	"components/switch": {
 		type: "file",
 		path: "components/switch.mdx",
@@ -561,19 +574,6 @@ export const contentRegistry: ContentRegistry = {
 		breadcrumbs: [
 			{ label: "Components", path: "/docs/components" },
 			{ label: "Textarea", path: "/docs/components/textarea" },
-		],
-	},
-	"components/toast": {
-		type: "file",
-		path: "components/toast.mdx",
-		meta: {
-			title: "Toast",
-			description: "Displays a message to the user in a toast.",
-		},
-		urlPath: "components/toast",
-		breadcrumbs: [
-			{ label: "Components", path: "/docs/components" },
-			{ label: "Toast", path: "/docs/components/toast" },
 		],
 	},
 	"components/toggle-group": {

@@ -928,6 +928,46 @@ export const demoRegistry: DemoRegistry = {
 		category: "slider",
 		path: "src/components/demos/slider/slider-with-value.tsx",
 	},
+	"sonner-action": {
+		source:
+			'import { Button } from "@/components/ui/button"\nimport { toast } from "@/components/ui/sonner"\n\nexport default function SonnerActionDemo() {\n\treturn (\n\t\t<Button\n\t\t\tonClick={() =>\n\t\t\t\ttoast("Your email has been sent", {\n\t\t\t\t\tdescription: "We\'ll get back to you as soon as possible",\n\t\t\t\t\taction: {\n\t\t\t\t\t\tlabel: "Unsend",\n\t\t\t\t\t\tonClick: () => toast.success("Email unsent"),\n\t\t\t\t\t},\n\t\t\t\t})\n\t\t\t}\n\t\t>\n\t\t\tShow Toast\n\t\t</Button>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/sonner/sonner-action")
+		),
+		title: "sonner-action",
+		category: "sonner",
+		path: "src/components/demos/sonner/sonner-action.tsx",
+	},
+	"sonner-demo": {
+		source:
+			'import { Button } from "@/components/ui/button"\nimport { toast } from "@/components/ui/sonner"\n\nexport default function SonnerDemo() {\n\treturn (\n\t\t<Button\n\t\t\tonClick={() =>\n\t\t\t\ttoast("Your request has been sent", {\n\t\t\t\t\tdescription: "We\'ll get back to you as soon as possible",\n\t\t\t\t})\n\t\t\t}\n\t\t>\n\t\t\tShow Toast\n\t\t</Button>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/sonner/sonner-demo")
+		),
+		title: "sonner-demo",
+		category: "sonner",
+		path: "src/components/demos/sonner/sonner-demo.tsx",
+	},
+	"sonner-promise": {
+		source:
+			'import { Button } from "@/components/ui/button"\nimport { toast } from "@/components/ui/sonner"\n\nexport default function SonnerPromiseDemo() {\n\treturn (\n\t\t<Button\n\t\t\tonClick={() =>\n\t\t\t\ttoast.promise(\n\t\t\t\t\tnew Promise((resolve) => {\n\t\t\t\t\t\tsetTimeout(() => {\n\t\t\t\t\t\t\tresolve("Request sent")\n\t\t\t\t\t\t}, 2000)\n\t\t\t\t\t}),\n\t\t\t\t\t{\n\t\t\t\t\t\tloading: "Sending request...",\n\t\t\t\t\t\tsuccess: "Request sent",\n\t\t\t\t\t}\n\t\t\t\t)\n\t\t\t}\n\t\t>\n\t\t\tShow Toast\n\t\t</Button>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/sonner/sonner-promise")
+		),
+		title: "sonner-promise",
+		category: "sonner",
+		path: "src/components/demos/sonner/sonner-promise.tsx",
+	},
+	"sonner-rich-colors": {
+		source:
+			'import { Button } from "@/components/ui/button"\nimport { toast } from "@/components/ui/sonner"\n\nexport default function SonnerRichColorsDemo() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t<Button\n\t\t\t\tonClick={() =>\n\t\t\t\t\ttoast.success("Success", { richColors: true, duration: 60000 })\n\t\t\t\t}\n\t\t\t>\n\t\t\t\tsuccess\n\t\t\t</Button>\n\t\t\t<Button\n\t\t\t\tonClick={() =>\n\t\t\t\t\ttoast.error("Error", { richColors: true, duration: 60000 })\n\t\t\t\t}\n\t\t\t>\n\t\t\t\terror\n\t\t\t</Button>\n\t\t\t<Button\n\t\t\t\tonClick={() =>\n\t\t\t\t\ttoast.warning("Warning", { richColors: true, duration: 60000 })\n\t\t\t\t}\n\t\t\t>\n\t\t\t\twarning\n\t\t\t</Button>\n\t\t\t<Button\n\t\t\t\tonClick={() =>\n\t\t\t\t\ttoast.info("Info", { richColors: true, duration: 60000 })\n\t\t\t\t}\n\t\t\t>\n\t\t\t\tinfo\n\t\t\t</Button>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/sonner/sonner-rich-colors")
+		),
+		title: "sonner-rich-colors",
+		category: "sonner",
+		path: "src/components/demos/sonner/sonner-rich-colors.tsx",
+	},
 	"switch-demo": {
 		source:
 			'import { Switch } from "@/components/ui/switch"\n\nexport default function SwitchDemo() {\n\treturn <Switch />\n}\n',
@@ -1033,44 +1073,6 @@ export const demoRegistry: DemoRegistry = {
 		title: "theme-toggle",
 		category: "theme-toggle",
 		path: "src/components/demos/theme-toggle/theme-toggle.tsx",
-	},
-	"toast-action": {
-		source:
-			'import { Button } from "@/components/ui/button"\nimport { toast } from "@/components/ui/sonner"\n\nexport default function ToastAction() {\n\treturn (\n\t\t<Button\n\t\t\tonClick={() =>\n\t\t\t\ttoast("Your email has been sent", {\n\t\t\t\t\tdescription: "We\'ll get back to you as soon as possible",\n\t\t\t\t\taction: {\n\t\t\t\t\t\tlabel: "Unsend",\n\t\t\t\t\t\tonClick: () => toast.success("Email unsent"),\n\t\t\t\t\t},\n\t\t\t\t})\n\t\t\t}\n\t\t>\n\t\t\tShow Toast\n\t\t</Button>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/toast/toast-action")
-		),
-		title: "toast-action",
-		category: "toast",
-		path: "src/components/demos/toast/toast-action.tsx",
-	},
-	"toast-demo": {
-		source:
-			'import { Button } from "@/components/ui/button"\nimport { toast } from "@/components/ui/sonner"\n\nexport default function ToastDemo() {\n\treturn (\n\t\t<Button\n\t\t\tonClick={() =>\n\t\t\t\ttoast("Your request has been sent", {\n\t\t\t\t\tdescription: "We\'ll get back to you as soon as possible",\n\t\t\t\t})\n\t\t\t}\n\t\t>\n\t\t\tShow Toast\n\t\t</Button>\n\t)\n}\n',
-		component: React.lazy(() => import("@/components/demos/toast/toast-demo")),
-		title: "toast-demo",
-		category: "toast",
-		path: "src/components/demos/toast/toast-demo.tsx",
-	},
-	"toast-promise": {
-		source:
-			'import { Button } from "@/components/ui/button"\nimport { toast } from "@/components/ui/sonner"\n\nexport default function ToastPromise() {\n\treturn (\n\t\t<Button\n\t\t\tonClick={() =>\n\t\t\t\ttoast.promise(\n\t\t\t\t\tnew Promise((resolve) => {\n\t\t\t\t\t\tsetTimeout(() => {\n\t\t\t\t\t\t\tresolve("Request sent")\n\t\t\t\t\t\t}, 2000)\n\t\t\t\t\t}),\n\t\t\t\t\t{\n\t\t\t\t\t\tloading: "Sending request...",\n\t\t\t\t\t\tsuccess: "Request sent",\n\t\t\t\t\t}\n\t\t\t\t)\n\t\t\t}\n\t\t>\n\t\t\tShow Toast\n\t\t</Button>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/toast/toast-promise")
-		),
-		title: "toast-promise",
-		category: "toast",
-		path: "src/components/demos/toast/toast-promise.tsx",
-	},
-	"toast-rich-colors": {
-		source:
-			'import { Button } from "@/components/ui/button"\nimport { toast } from "@/components/ui/sonner"\n\nexport default function ToastRichColors() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t<Button\n\t\t\t\tonClick={() =>\n\t\t\t\t\ttoast.success("Success", { richColors: true, duration: 60000 })\n\t\t\t\t}\n\t\t\t>\n\t\t\t\tsuccess\n\t\t\t</Button>\n\t\t\t<Button\n\t\t\t\tonClick={() =>\n\t\t\t\t\ttoast.error("Error", { richColors: true, duration: 60000 })\n\t\t\t\t}\n\t\t\t>\n\t\t\t\terror\n\t\t\t</Button>\n\t\t\t<Button\n\t\t\t\tonClick={() =>\n\t\t\t\t\ttoast.warning("Warning", { richColors: true, duration: 60000 })\n\t\t\t\t}\n\t\t\t>\n\t\t\t\twarning\n\t\t\t</Button>\n\t\t\t<Button\n\t\t\t\tonClick={() =>\n\t\t\t\t\ttoast.info("Info", { richColors: true, duration: 60000 })\n\t\t\t\t}\n\t\t\t>\n\t\t\t\tinfo\n\t\t\t</Button>\n\t\t</div>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/toast/toast-rich-colors")
-		),
-		title: "toast-rich-colors",
-		category: "toast",
-		path: "src/components/demos/toast/toast-rich-colors.tsx",
 	},
 	"toggle-group-demo": {
 		source:

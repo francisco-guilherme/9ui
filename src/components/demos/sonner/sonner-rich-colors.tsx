@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { toast } from "@/components/ui/sonner"
 
-export default function ToastRichColors() {
+export default function SonnerRichColorsDemo() {
 	return (
 		<div className="grid grid-cols-2 gap-2">
 			<Button
