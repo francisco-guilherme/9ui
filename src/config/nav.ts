@@ -52,7 +52,7 @@ export const navConfig: NavConfig = {
 					title: "Figma",
 					href: "/docs/getting-started/figma",
 					disabled: true,
-					label: "Coming Soon",
+					label: "Soon",
 				},
 			],
 		},
@@ -133,6 +133,12 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/context-menu",
 				},
 				{
+					title: "Data Table",
+					href: "/docs/components/data-table",
+					disabled: true,
+					label: "Soon",
+				},
+				{
 					title: "Date Picker",
 					href: "/docs/components/date-picker",
 				},
@@ -176,6 +182,12 @@ export const navConfig: NavConfig = {
 					title: "Meter",
 					href: "/docs/components/meter",
 					label: "New",
+				},
+				{
+					title: "Number Field",
+					href: "/docs/components/number-field",
+					disabled: true,
+					label: "Soon",
 				},
 				{
 					title: "Popover",
@@ -236,6 +248,12 @@ export const navConfig: NavConfig = {
 				{
 					title: "Textarea",
 					href: "/docs/components/textarea",
+				},
+				{
+					title: "Toast",
+					href: "/docs/components/toast",
+					disabled: true,
+					label: "Soon",
 				},
 				{
 					title: "Toggle",
