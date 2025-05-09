@@ -159,6 +159,19 @@ export const contentRegistry: ContentRegistry = {
 			{ label: "Chart", path: "/docs/components/chart" },
 		],
 	},
+	"components/checkbox-group": {
+		type: "file",
+		path: "components/checkbox-group.mdx",
+		meta: {
+			title: "Checkbox Group",
+			description: "Manages selection state across multiple checkboxes.",
+		},
+		urlPath: "components/checkbox-group",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Checkbox Group", path: "/docs/components/checkbox-group" },
+		],
+	},
 	"components/checkbox": {
 		type: "file",
 		path: "components/checkbox.mdx",
@@ -355,6 +368,19 @@ export const contentRegistry: ContentRegistry = {
 			{ label: "Menubar", path: "/docs/components/menubar" },
 		],
 	},
+	"components/meter": {
+		type: "file",
+		path: "components/meter.mdx",
+		meta: {
+			title: "Meter",
+			description: "Used to represent a value within a fixed scale.",
+		},
+		urlPath: "components/meter",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Meter", path: "/docs/components/meter" },
+		],
+	},
 	"components/popover": {
 		type: "file",
 		path: "components/popover.mdx",
@@ -484,6 +510,19 @@ export const contentRegistry: ContentRegistry = {
 			{ label: "Slider", path: "/docs/components/slider" },
 		],
 	},
+	"components/sonner": {
+		type: "file",
+		path: "components/sonner.mdx",
+		meta: {
+			title: "Sonner",
+			description: "Displays a message to the user in a toast.",
+		},
+		urlPath: "components/sonner",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Sonner", path: "/docs/components/sonner" },
+		],
+	},
 	"components/switch": {
 		type: "file",
 		path: "components/switch.mdx",
@@ -535,19 +574,6 @@ export const contentRegistry: ContentRegistry = {
 		breadcrumbs: [
 			{ label: "Components", path: "/docs/components" },
 			{ label: "Textarea", path: "/docs/components/textarea" },
-		],
-	},
-	"components/toast": {
-		type: "file",
-		path: "components/toast.mdx",
-		meta: {
-			title: "Toast",
-			description: "Displays a message to the user in a toast.",
-		},
-		urlPath: "components/toast",
-		breadcrumbs: [
-			{ label: "Components", path: "/docs/components" },
-			{ label: "Toast", path: "/docs/components/toast" },
 		],
 	},
 	"components/toggle-group": {

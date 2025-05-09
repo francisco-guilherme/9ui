@@ -52,7 +52,7 @@ export const navConfig: NavConfig = {
 					title: "Figma",
 					href: "/docs/getting-started/figma",
 					disabled: true,
-					label: "Coming Soon",
+					label: "Soon",
 				},
 			],
 		},
@@ -112,6 +112,11 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/checkbox",
 				},
 				{
+					title: "Checkbox Group",
+					href: "/docs/components/checkbox-group",
+					label: "New",
+				},
+				{
 					title: "Collapsible",
 					href: "/docs/components/collapsible",
 				},
@@ -126,6 +131,12 @@ export const navConfig: NavConfig = {
 				{
 					title: "Context Menu",
 					href: "/docs/components/context-menu",
+				},
+				{
+					title: "Data Table",
+					href: "/docs/components/data-table",
+					disabled: true,
+					label: "Soon",
 				},
 				{
 					title: "Date Picker",
@@ -146,7 +157,6 @@ export const navConfig: NavConfig = {
 				{
 					title: "Emoji Picker",
 					href: "/docs/components/emoji-picker",
-					label: "New",
 				},
 				{
 					title: "Form",
@@ -167,6 +177,17 @@ export const navConfig: NavConfig = {
 				{
 					title: "Menubar",
 					href: "/docs/components/menubar",
+				},
+				{
+					title: "Meter",
+					href: "/docs/components/meter",
+					label: "New",
+				},
+				{
+					title: "Number Field",
+					href: "/docs/components/number-field",
+					disabled: true,
+					label: "Soon",
 				},
 				{
 					title: "Popover",
@@ -209,6 +230,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/slider",
 				},
 				{
+					title: "Sonner",
+					href: "/docs/components/sonner",
+				},
+				{
 					title: "Switch",
 					href: "/docs/components/switch",
 				},
@@ -227,6 +252,8 @@ export const navConfig: NavConfig = {
 				{
 					title: "Toast",
 					href: "/docs/components/toast",
+					disabled: true,
+					label: "Soon",
 				},
 				{
 					title: "Toggle",
@@ -239,7 +266,6 @@ export const navConfig: NavConfig = {
 				{
 					title: "Toolbar",
 					href: "/docs/components/toolbar",
-					label: "New",
 				},
 				{
 					title: "Tooltip",

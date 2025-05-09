@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { toast } from "@/components/ui/sonner"
 
-export default function ToastAction() {
+export default function SonnerActionDemo() {
 	return (
 		<Button
 			onClick={() =>
