@@ -1,12 +1,12 @@
 <Title content="Menubar" />
 <Description content="Displays a top-level bar with expandable menus for easy access." />
 <ComponentLinks
-	links={[
-		{
-			label: "Docs",
-			href: "https://base-ui.com/react/components/menu",
-		},
-	]}
+  links={[
+    {
+      label: "Docs",
+      href: "https://base-ui.com/react/components/menu",
+    },
+  ]}
 />
 
 <ComponentPreview name="menubar-demo" />
@@ -33,40 +33,40 @@ npx shadcn@latest add https://9ui.dev/r/menubar.json
 
 ```tsx title="Imports"
 import {
-	Menubar,
-	MenubarCheckboxItem,
-	MenubarContent,
-	MenubarItem,
-	MenubarItemShortcut,
-	MenubarMenu,
-	MenubarRadioGroup,
-	MenubarRadioItem,
-	MenubarSeparator,
-	MenubarSubMenu,
-	MenubarSubTrigger,
-	MenubarTrigger,
+  Menubar,
+  MenubarCheckboxItem,
+  MenubarContent,
+  MenubarItem,
+  MenubarItemShortcut,
+  MenubarMenu,
+  MenubarRadioGroup,
+  MenubarRadioItem,
+  MenubarSeparator,
+  MenubarSubMenu,
+  MenubarSubTrigger,
+  MenubarTrigger,
 } from "@/components/ui/menubar"
 ```
 
 ```tsx title="Anatomy"
 <Menubar>
-	<MenubarMenu>
-		<MenubarTrigger />
-		<MenubarContent>
-			<MenubarItem>
-				<MenubarItemShortcut />
-			</MenubarItem>
-			<MenubarSeparator />
-			<MenubarCheckboxItem />
-			<MenubarSubMenu>
-				<MenubarSubTrigger />
-				<MenubarContent>
-					<MenubarRadioGroup>
-						<MenubarRadioItem />
-					</MenubarRadioGroup>
-				</MenubarContent>
-			</MenubarSubMenu>
-		</MenubarContent>
-	</MenubarMenu>
+  <MenubarMenu>
+    <MenubarTrigger />
+    <MenubarContent>
+      <MenubarItem>
+        <MenubarItemShortcut />
+      </MenubarItem>
+      <MenubarSeparator />
+      <MenubarCheckboxItem />
+      <MenubarSubMenu>
+        <MenubarSubTrigger />
+        <MenubarContent>
+          <MenubarRadioGroup>
+            <MenubarRadioItem />
+          </MenubarRadioGroup>
+        </MenubarContent>
+      </MenubarSubMenu>
+    </MenubarContent>
+  </MenubarMenu>
 </Menubar>
 ```

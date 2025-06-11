@@ -1,12 +1,12 @@
 <Title content="Form" />
 <Description content="A structured component for collecting and validating data." />
 <ComponentLinks
-	links={[
-		{
-			label: "Docs",
-			href: "https://react-hook-form.com/",
-		},
-	]}
+  links={[
+    {
+      label: "Docs",
+      href: "https://react-hook-form.com/",
+    },
+  ]}
 />
 
 <ComponentPreview name="form-demo" />
@@ -54,29 +54,29 @@ npm install react-hook-form zod @hookform/resolvers
 
 ```tsx title="Imports"
 import {
-	Field,
-	FieldContent,
-	FieldControl,
-	FieldDescription,
-	FieldError,
-	FieldLabel,
+  Field,
+  FieldContent,
+  FieldControl,
+  FieldDescription,
+  FieldError,
+  FieldLabel,
 } from "@/components/ui/field"
 import { Form } from "@/components/ui/form"
 ```
 
 ```tsx title="Anatomy"
 <Form>
-	<Field
-		name="..."
-		control="{...}"
-		render={() => (
-			<FieldContent>
-				<FieldLabel />
-				<FieldControl>{/* Input, Select, etc. */}</FieldControl>
-				<FieldDescription />
-				<FieldError />
-			</FieldContent>
-		)}
-	/>
+  <Field
+    name="..."
+    control="{...}"
+    render={() => (
+      <FieldContent>
+        <FieldLabel />
+        <FieldControl>{/* Input, Select, etc. */}</FieldControl>
+        <FieldDescription />
+        <FieldError />
+      </FieldContent>
+    )}
+  />
 </Form>
 ```

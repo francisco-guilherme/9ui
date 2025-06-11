@@ -2,12 +2,12 @@
 <Description content="Setting up dark mode in your Remix project." />
 
 <ComponentLinks
-	links={[
-		{
-			label: "Docs",
-			href: "https://github.com/abereghici/remix-themes",
-		},
-	]}
+  links={[
+    {
+      label: "Docs",
+      href: "https://github.com/abereghici/remix-themes",
+    },
+  ]}
 />
 
 <Steps>
@@ -19,7 +19,7 @@ This will allow you to use `dark` class to apply dark mode styles.
 ```css {1-2} title="tailwind.css"
 .dark,
 :root[class~="dark"] {
-	/* Your dark mode styles */
+  /* Your dark mode styles */
 }
 ```
 
@@ -36,15 +36,15 @@ import { createCookieSessionStorage } from "@remix-run/node"
 import { createThemeSessionResolver } from "remix-themes"
 
 const sessionStorage = createCookieSessionStorage({
-	cookie: {
-		name: "__remix-themes",
-		// domain: 'remix.run',
-		path: "/",
-		httpOnly: true,
-		sameSite: "lax",
-		secrets: ["s3cr3t"],
-		// secure: true,
-	},
+  cookie: {
+    name: "__remix-themes",
+    // domain: 'remix.run',
+    path: "/",
+    httpOnly: true,
+    sameSite: "lax",
+    secrets: ["s3cr3t"],
+    // secure: true,
+  },
 })
 
 export const themeSessionResolver = createThemeSessionResolver(sessionStorage)
@@ -67,13 +67,13 @@ import "./tailwind.css"
 
 import { LoaderFunctionArgs } from "@remix-run/node"
 import {
-	Links,
-	LiveReload,
-	Meta,
-	Outlet,
-	Scripts,
-	ScrollRestoration,
-	useLoaderData,
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react"
 import clsx from "clsx"
 import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from "remix-themes"
@@ -81,41 +81,41 @@ import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from "remix-themes"
 import { themeSessionResolver } from "./sessions.server"
 
 export async function loader({ request }: LoaderFunctionArgs) {
-	const { getTheme } = await themeSessionResolver(request)
-	return {
-		theme: getTheme(),
-	}
+  const { getTheme } = await themeSessionResolver(request)
+  return {
+    theme: getTheme(),
+  }
 }
 
 export default function AppWithProviders() {
-	const data = useLoaderData<typeof loader>()
-	return (
-		<ThemeProvider specifiedTheme={data.theme} themeAction="/action/set-theme">
-			<App />
-		</ThemeProvider>
-	)
+  const data = useLoaderData<typeof loader>()
+  return (
+    <ThemeProvider specifiedTheme={data.theme} themeAction="/action/set-theme">
+      <App />
+    </ThemeProvider>
+  )
 }
 
 export function App() {
-	const data = useLoaderData<typeof loader>()
-	const [theme] = useTheme()
-	return (
-		<html lang="en" className={clsx(theme)}>
-			<head>
-				<meta charSet="utf-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<Meta />
-				<PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
-				<Links />
-			</head>
-			<body>
-				<Outlet />
-				<ScrollRestoration />
-				<Scripts />
-				<LiveReload />
-			</body>
-		</html>
-	)
+  const data = useLoaderData<typeof loader>()
+  const [theme] = useTheme()
+  return (
+    <html lang="en" className={clsx(theme)}>
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
+        <Links />
+      </head>
+      <body>
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
+      </body>
+    </html>
+  )
 }
 ```
 
@@ -129,19 +129,19 @@ import { Theme, useTheme } from "remix-themes"
 import { Button } from "./ui/button"
 
 export function ModeToggle() {
-	const [theme, setTheme] = useTheme()
+  const [theme, setTheme] = useTheme()
 
-	const toggleTheme = React.useCallback(() => {
-		setTheme(theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT)
-	}, [theme, setTheme])
+  const toggleTheme = React.useCallback(() => {
+    setTheme(theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT)
+  }, [theme, setTheme])
 
-	return (
-		<Button onClick={toggleTheme} variant="ghost" size="icon">
-			<MoonIcon className="dark:hidden" />
-			<SunIcon className="hidden dark:block" />
-			<span className="sr-only">Toggle theme</span>
-		</Button>
-	)
+  return (
+    <Button onClick={toggleTheme} variant="ghost" size="icon">
+      <MoonIcon className="dark:hidden" />
+      <SunIcon className="hidden dark:block" />
+      <span className="sr-only">Toggle theme</span>
+    </Button>
+  )
 }
 ```
 

@@ -4,51 +4,51 @@ import template from "lodash/template"
 import { colors, PrimaryColor, Shade } from "@/config/colors"
 
 export const generateTheme = (
-	shade: Shade,
-	primaryColor: PrimaryColor,
-	radius: number = 0.5,
-	flat: boolean = false,
-	forceStyles = false
+  shade: Shade,
+  primaryColor: PrimaryColor,
+  radius: number = 0.5,
+  flat: boolean = false,
+  forceStyles = false
 ) => {
-	const shadeColors = cloneDeep(colors.shades[shade])
+  const shadeColors = cloneDeep(colors.shades[shade])
 
-	if (flat) {
-		shadeColors.cssVars.light = {
-			...shadeColors.cssVars.light,
-			card: shadeColors.cssVars.light.background,
-			popover: shadeColors.cssVars.light.background,
-			input: shadeColors.cssVars.light.background,
-		}
-		shadeColors.cssVars.dark = {
-			...shadeColors.cssVars.dark,
-			card: shadeColors.cssVars.dark.background,
-			popover: shadeColors.cssVars.dark.background,
-			input: shadeColors.cssVars.dark.background,
-		}
-	}
+  if (flat) {
+    shadeColors.cssVars.light = {
+      ...shadeColors.cssVars.light,
+      card: shadeColors.cssVars.light.background,
+      popover: shadeColors.cssVars.light.background,
+      input: shadeColors.cssVars.light.background,
+    }
+    shadeColors.cssVars.dark = {
+      ...shadeColors.cssVars.dark,
+      card: shadeColors.cssVars.dark.background,
+      popover: shadeColors.cssVars.dark.background,
+      input: shadeColors.cssVars.dark.background,
+    }
+  }
 
-	const primaryColors =
-		primaryColor === "neutral" ? shadeColors : colors.primary[primaryColor]
+  const primaryColors =
+    primaryColor === "neutral" ? shadeColors : colors.primary[primaryColor]
 
-	const styles = template(STYLES_TEMPLATE)({
-		colors: {
-			shade: {
-				light: shadeColors.cssVars.light,
-				dark: shadeColors.cssVars.dark,
-			},
-			primary: {
-				light: primaryColors.cssVars.light,
-				dark: primaryColors.cssVars.dark,
-			},
-		},
-		radius: radius,
-	})
+  const styles = template(STYLES_TEMPLATE)({
+    colors: {
+      shade: {
+        light: shadeColors.cssVars.light,
+        dark: shadeColors.cssVars.dark,
+      },
+      primary: {
+        light: primaryColors.cssVars.light,
+        dark: primaryColors.cssVars.dark,
+      },
+    },
+    radius: radius,
+  })
 
-	if (forceStyles) {
-		return styles
-	}
+  if (forceStyles) {
+    return styles
+  }
 
-	return styles.replaceAll(" !important", "")
+  return styles.replaceAll(" !important", "")
 }
 
 const STYLES_TEMPLATE = `@layer base {

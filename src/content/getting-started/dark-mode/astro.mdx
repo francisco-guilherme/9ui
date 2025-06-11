@@ -50,18 +50,18 @@ Create a utility to handle theme management.
 export type Theme = "light" | "dark" | "system"
 
 export function getTheme(): Theme {
-	if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-		return localStorage.getItem("theme") as Theme
-	}
-	return "system"
+  if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+    return localStorage.getItem("theme") as Theme
+  }
+  return "system"
 }
 
 export function setTheme(theme: Theme) {
-	const isDark =
-		theme === "dark" ||
-		(theme === "system" &&
-			window.matchMedia("(prefers-color-scheme: dark)").matches)
-	document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+  const isDark =
+    theme === "dark" ||
+    (theme === "system" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark")
 }
 ```
 
@@ -75,21 +75,21 @@ import { getTheme, setTheme, type Theme } from "../utils/theme"
 import { Button } from "./ui/button"
 
 export function ThemeToggle() {
-	const [theme, setCurrentTheme] = React.useState<Theme>(() => getTheme())
+  const [theme, setCurrentTheme] = React.useState<Theme>(() => getTheme())
 
-	const toggleTheme = () => {
-		const newTheme = theme === "dark" ? "light" : "dark"
-		setTheme(newTheme)
-		setCurrentTheme(newTheme)
-	}
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark"
+    setTheme(newTheme)
+    setCurrentTheme(newTheme)
+  }
 
-	return (
-		<Button onClick={toggleTheme} variant="ghost" size="icon">
-			<MoonIcon className="dark:hidden" />
-			<SunIcon className="hidden dark:block" />
-			<span className="sr-only">Toggle theme</span>
-		</Button>
-	)
+  return (
+    <Button onClick={toggleTheme} variant="ghost" size="icon">
+      <MoonIcon className="dark:hidden" />
+      <SunIcon className="hidden dark:block" />
+      <span className="sr-only">Toggle theme</span>
+    </Button>
+  )
 }
 ```
 

@@ -1,5 +1,5 @@
 export {
-	highlighter,
-	rehypeSyntaxHighlighting,
-	getHighlighterSync,
+  highlighter,
+  rehypeSyntaxHighlighting,
+  getHighlighterSync,
 } from "./index.mjs"

@@ -1,12 +1,12 @@
 <Title content="Context Menu" />
 <Description content="Used to provide options specific to an element or area." />
 <ComponentLinks
-	links={[
-		{
-			label: "Docs",
-			href: "https://base-ui.com/react/components/menu",
-		},
-	]}
+  links={[
+    {
+      label: "Docs",
+      href: "https://base-ui.com/react/components/menu",
+    },
+  ]}
 />
 
 <ComponentPreview name="context-menu-demo" />
@@ -33,43 +33,43 @@ npx shadcn@latest add https://9ui.dev/r/context-menu.json
 
 ```tsx title="Imports"
 import {
-	ContextMenu,
-	ContextMenuCheckboxItem,
-	ContextMenuContent,
-	ContextMenuGroup,
-	ContextMenuGroupLabel,
-	ContextMenuItem,
-	ContextMenuItemShortcut,
-	ContextMenuRadioGroup,
-	ContextMenuRadioItem,
-	ContextMenuSeparator,
-	ContextMenuSubTrigger,
-	ContextMenuTrigger,
+  ContextMenu,
+  ContextMenuCheckboxItem,
+  ContextMenuContent,
+  ContextMenuGroup,
+  ContextMenuGroupLabel,
+  ContextMenuItem,
+  ContextMenuItemShortcut,
+  ContextMenuRadioGroup,
+  ContextMenuRadioItem,
+  ContextMenuSeparator,
+  ContextMenuSubTrigger,
+  ContextMenuTrigger,
 } from "@/components/ui/context-menu"
 ```
 
 ```tsx title="Anatomy"
 <ContextMenu>
-	<ContextMenuTrigger />
-	<ContextMenuContent>
-		<ContextMenuGroup>
-			<ContextMenuGroupLabel />
-			<ContextMenuItem>
-				<ContextMenuItemShortcut />
-			</ContextMenuItem>
-			<ContextMenu>
-				<ContextMenuSubTrigger />
-				<ContextMenuContent>
-					<ContextMenuItem />
-				</ContextMenuContent>
-			</ContextMenu>
-		</ContextMenuGroup>
-		<ContextMenuSeparator />
-		<ContextMenuCheckboxItem />
-		<ContextMenuSeparator />
-		<ContextMenuRadioGroup>
-			<ContextMenuRadioItem />
-		</ContextMenuRadioGroup>
-	</ContextMenuContent>
+  <ContextMenuTrigger />
+  <ContextMenuContent>
+    <ContextMenuGroup>
+      <ContextMenuGroupLabel />
+      <ContextMenuItem>
+        <ContextMenuItemShortcut />
+      </ContextMenuItem>
+      <ContextMenu>
+        <ContextMenuSubTrigger />
+        <ContextMenuContent>
+          <ContextMenuItem />
+        </ContextMenuContent>
+      </ContextMenu>
+    </ContextMenuGroup>
+    <ContextMenuSeparator />
+    <ContextMenuCheckboxItem />
+    <ContextMenuSeparator />
+    <ContextMenuRadioGroup>
+      <ContextMenuRadioItem />
+    </ContextMenuRadioGroup>
+  </ContextMenuContent>
 </ContextMenu>
 ```

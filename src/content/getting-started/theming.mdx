@@ -54,15 +54,15 @@ To add new colors to your theme:
 
 ```css title="globals.css"
 :root {
-	/* Existing colors */
-	--custom-color: oklch(0.627 0.265 303.9);
-	--custom-color-foreground: oklch(0.977 0.014 308.299);
+  /* Existing colors */
+  --custom-color: oklch(0.627 0.265 303.9);
+  --custom-color-foreground: oklch(0.977 0.014 308.299);
 }
 
 .dark {
-	/* Existing dark mode colors */
-	--custom-color: oklch(0.627 0.265 303.9);
-	--custom-color-foreground: oklch(0.977 0.014 308.299);
+  /* Existing dark mode colors */
+  --custom-color: oklch(0.627 0.265 303.9);
+  --custom-color-foreground: oklch(0.977 0.014 308.299);
 }
 ```
 
@@ -86,6 +86,6 @@ After adding new colors, you can use them with Tailwind's utility classes:
 
 ```jsx title="Usage"
 <div className="bg-custom-color text-custom-color-foreground">
-	Custom colored content
+  Custom colored content
 </div>
 ```

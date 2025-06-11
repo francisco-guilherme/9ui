@@ -1,12 +1,12 @@
 <Title content="Command" />
 <Description content="A searchable interface for quickly executing commands or actions." />
 <ComponentLinks
-	links={[
-		{
-			label: "Docs",
-			href: "https://github.com/pacocoursey/cmdk",
-		},
-	]}
+  links={[
+    {
+      label: "Docs",
+      href: "https://github.com/pacocoursey/cmdk",
+    },
+  ]}
 />
 
 <ComponentPreview name="command-demo" />
@@ -43,29 +43,29 @@ npm install cmdk-base
 
 ```tsx title="Imports"
 import {
-	Command,
-	CommandEmpty,
-	CommandGroup,
-	CommandInput,
-	CommandItem,
-	CommandList,
-	CommandSeparator,
-	CommandShortcut,
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
 } from "@/components/ui/command"
 ```
 
 ```tsx title="Anatomy"
 <Command>
-	<CommandInput />
-	<CommandList>
-		<CommandEmpty />
-		<CommandGroup>
-			<CommandItem>
-				<CommandShortcut />
-			</CommandItem>
-		</CommandGroup>
-		<CommandSeparator />
-	</CommandList>
+  <CommandInput />
+  <CommandList>
+    <CommandEmpty />
+    <CommandGroup>
+      <CommandItem>
+        <CommandShortcut />
+      </CommandItem>
+    </CommandGroup>
+    <CommandSeparator />
+  </CommandList>
 </Command>
 ```
 

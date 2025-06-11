@@ -43,10 +43,9 @@ async function findDemoFiles(): Promise<DemoFile[]> {
 }
 
 function generateRegistryCode(demos: DemoFile[]): string {
-	const imports = [
-		'import { type DemoRegistry } from "@/types/demo"',
-		'import React from "react"',
-	].join("\n")
+	const imports = ['import { type DemoRegistry } from "@/types/demo"', ""].join(
+		"\n"
+	)
 
 	const registry = demos
 		.map(

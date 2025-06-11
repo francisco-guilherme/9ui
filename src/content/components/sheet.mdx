@@ -1,12 +1,12 @@
 <Title content="Sheet" />
 <Description content="A sliding panel for displaying content." />
 <ComponentLinks
-	links={[
-		{
-			label: "Docs",
-			href: "https://base-ui.com/react/components/dialog",
-		},
-	]}
+  links={[
+    {
+      label: "Docs",
+      href: "https://base-ui.com/react/components/dialog",
+    },
+  ]}
 />
 
 <ComponentPreview name="sheet-demo" />
@@ -33,30 +33,30 @@ npx shadcn@latest add https://9ui.dev/r/sheet.json
 
 ```tsx title="Imports"
 import {
-	Sheet,
-	SheetClose,
-	SheetContent,
-	SheetDescription,
-	SheetFooter,
-	SheetHeader,
-	SheetTitle,
-	SheetTrigger,
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
 } from "@/components/ui/sheet"
 ```
 
 ```tsx title="Anatomy"
 <Sheet>
-	<SheetTrigger />
-	<SheetContent>
-		<SheetClose />
-		<SheetHeader>
-			<SheetTitle />
-			<SheetDescription />
-		</SheetHeader>
-		<SheetFooter>
-			<SheetClose />
-		</SheetFooter>
-	</SheetContent>
+  <SheetTrigger />
+  <SheetContent>
+    <SheetClose />
+    <SheetHeader>
+      <SheetTitle />
+      <SheetDescription />
+    </SheetHeader>
+    <SheetFooter>
+      <SheetClose />
+    </SheetFooter>
+  </SheetContent>
 </Sheet>
 ```
 

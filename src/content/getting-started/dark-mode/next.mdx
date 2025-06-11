@@ -2,12 +2,12 @@
 <Description content="Setting up dark mode in your Next.js project." />
 
 <ComponentLinks
-	links={[
-		{
-			label: "Docs",
-			href: "https://github.com/pacocoursey/next-themes",
-		},
-	]}
+  links={[
+    {
+      label: "Docs",
+      href: "https://github.com/pacocoursey/next-themes",
+    },
+  ]}
 />
 
 <Steps>
@@ -21,15 +21,13 @@ npm install next-themes
 <Step>Create `ThemeProvider`.</Step>
 
 ```tsx title="providers/theme-provider.tsx"
-"use client"
-
 import { ThemeProvider as NextThemesProvider } from "next-themes"
 
 export function ThemeProvider({
-	children,
-	...props
+  children,
+  ...props
 }: React.ComponentProps<typeof NextThemesProvider>) {
-	return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }
 ```
 
@@ -39,25 +37,25 @@ export function ThemeProvider({
 import { ThemeProvider } from "@/providers/theme-provider"
 
 export default function RootLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode
+  children: React.ReactNode
 }) {
-	return (
-		<html lang="en" suppressHydrationWarning>
-			<head />
-			<body>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="system"
-					enableSystem
-					disableTransitionOnChange
-				>
-					{children}
-				</ThemeProvider>
-			</body>
-		</html>
-	)
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  )
 }
 ```
 

@@ -1,12 +1,12 @@
 <Title content="Emoji Picker" />
 <Description content="A component that allows users to pick an emoji." />
 <ComponentLinks
-	links={[
-		{
-			label: "Docs",
-			href: "https://frimousse.liveblocks.io/",
-		},
-	]}
+  links={[
+    {
+      label: "Docs",
+      href: "https://frimousse.liveblocks.io/",
+    },
+  ]}
 />
 
 <ComponentPreview name="emoji-picker-demo" />
@@ -37,23 +37,23 @@ npx shadcn@latest add https://9ui.dev/r/emoji-picker.json
 
 ```tsx title="Imports"
 import {
-	EmojiPicker,
-	EmojiPickerContent,
-	EmojiPickerEmpty,
-	EmojiPickerList,
-	EmojiPickerLoading,
-	EmojiPickerSearch,
+  EmojiPicker,
+  EmojiPickerContent,
+  EmojiPickerEmpty,
+  EmojiPickerList,
+  EmojiPickerLoading,
+  EmojiPickerSearch,
 } from "@/components/ui/emoji-picker"
 ```
 
 ```tsx title="Anatomy"
 <EmojiPicker>
-	<EmojiPickerSearch />
-	<EmojiPickerContent>
-		<EmojiPickerLoading />
-		<EmojiPickerEmpty />
-		<EmojiPickerList />
-	</EmojiPickerContent>
+  <EmojiPickerSearch />
+  <EmojiPickerContent>
+    <EmojiPickerLoading />
+    <EmojiPickerEmpty />
+    <EmojiPickerList />
+  </EmojiPickerContent>
 </EmojiPicker>
 ```
 
