@@ -3,8 +3,8 @@
   "style": "new-york",
   "rsc": true,
   "tsx": true,
-  "tailwind": {
-    "config": "tailwind.config.js",
+  "unocss": {
+    "config": "uno.config.ts",
     "css": "src/app/globals.css",
     "baseColor": "neutral",
     "cssVariables": true,

@@ -3,6 +3,7 @@ import rehypeExtractToc from "@stefanprobst/rehype-extract-toc"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
+import UnoCSS from "@unocss/webpack"
 
 import {
 	rehypeCommandProperties,
@@ -16,6 +17,10 @@ import { rehypeSyntaxHighlighting } from "./src/lib/rehype/syntax-highlighting/i
 const nextConfig = {
 	pageExtensions: ["mdx", "tsx", "ts", "js", "jsx"],
 	reactStrictMode: true,
+	webpack: (config) => {
+		config.plugins.push(UnoCSS())
+		return config
+	},
 	redirects() {
 		return [
 			{
