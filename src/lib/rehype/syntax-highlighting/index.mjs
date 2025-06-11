@@ -36,24 +36,37 @@ export function rehypeInlineCode() {
 	}
 }
 
-// Next.js hot reload doesn't dispose previously created instances of the
-// Shiki highlighter, which leads to server crashes during moderately long
-// work sessions. We instantiate the highlighter as a property of `globalThis`
-// so that the object persists between hot reloads and doesn't leak memory.
-globalThis.highlighter ??= await createHighlighter({
-	themes: ["github-dark-default", "github-light-default"],
-	langs: ["tsx", "bash", "css", "js", "json", "jsx", "ts"],
-})
+// Initialize highlighter lazily to avoid top-level await
+let highlighterPromise = null
+let highlighterInstance = null
 
-/** @type {Awaited<ReturnType<typeof import('shiki').createHighlighter>> } */
-export const highlighter = globalThis.highlighter
+function getHighlighter() {
+	if (!highlighterPromise) {
+		highlighterPromise = createHighlighter({
+			themes: ["github-dark-default", "github-light-default"],
+			langs: ["tsx", "bash", "css", "js", "json", "jsx", "ts"],
+		}).then(h => {
+			highlighterInstance = h
+			return h
+		})
+	}
+	return highlighterPromise
+}
+
+// Export for compatibility - this will be a Promise
+export const highlighter = getHighlighter()
+
+// Export a function to get the highlighter instance synchronously (if available)
+export function getHighlighterSync() {
+	return highlighterInstance
+}
 
 /** @type {import('unified').PluggableList} */
 export const rehypeSyntaxHighlighting = [
 	[
 		rehypePrettyCode,
 		{
-			getHighlighter: () => globalThis.highlighter,
+			getHighlighter: getHighlighter,
 			theme: {
 				light: "github-light-default",
 				dark: "github-dark-default",

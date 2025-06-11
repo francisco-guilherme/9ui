@@ -1,7 +1,4 @@
-"use client"
-
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { Link, useLocation } from "react-router-dom"
 
 import { Icons } from "@/components/icons"
 import { Separator } from "@/components/ui/separator"
@@ -9,18 +6,19 @@ import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
 
 export function MainNav() {
-	const pathname = usePathname()
+	const location = useLocation()
+	const pathname = location.pathname
 
 	return (
 		<div className="mr-4 hidden md:flex">
-			<Link href="/" className="flex items-center">
+			<Link to="/" className="flex items-center">
 				<Icons.logo className="size-3" />
 				<span className="ml-0.5 font-mono text-lg font-black">ui</span>
 			</Link>
 			<Separator orientation="vertical" className="mx-4 my-auto h-6" />
 			<nav className="flex items-center gap-6 text-sm">
 				<Link
-					href="/docs"
+					to="/docs"
 					className={cn(
 						"transition-colors hover:text-foreground",
 						pathname.startsWith("/docs/getting-started")
@@ -31,7 +29,7 @@ export function MainNav() {
 					Docs
 				</Link>
 				<Link
-					href="/docs/components"
+					to="/docs/components"
 					className={cn(
 						"transition-colors hover:text-foreground",
 						pathname?.startsWith("/docs/components")
@@ -42,7 +40,7 @@ export function MainNav() {
 					Components
 				</Link>
 				<Link
-					href="/themes"
+					to="/themes"
 					className={cn(
 						"transition-colors hover:text-foreground",
 						pathname?.startsWith("/themes")

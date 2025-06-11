@@ -20,73 +20,65 @@ export default defineConfig({
 			sm: "calc(var(--radius) - 4px)",
 		},
 		colors: {
-			background: "oklch(from var(--background) l c h / <alpha-value>)",
-			foreground: "oklch(from var(--foreground) l c h / <alpha-value>)",
+			background: "var(--background)",
+			foreground: "var(--foreground)",
 			card: {
-				DEFAULT: "oklch(from var(--card) l c h / <alpha-value>)",
-				foreground: "oklch(from var(--card-foreground) l c h / <alpha-value>)",
+				DEFAULT: "var(--card)",
+				foreground: "var(--card-foreground)",
 			},
 			popover: {
-				DEFAULT: "oklch(from var(--popover) l c h / <alpha-value>)",
-				foreground:
-					"oklch(from var(--popover-foreground) l c h / <alpha-value>)",
+				DEFAULT: "var(--popover)",
+				foreground: "var(--popover-foreground)",
 			},
 			primary: {
-				DEFAULT: "oklch(from var(--primary) l c h / <alpha-value>)",
-				foreground:
-					"oklch(from var(--primary-foreground) l c h / <alpha-value>)",
+				DEFAULT: "var(--primary)",
+				foreground: "var(--primary-foreground)",
 			},
 			secondary: {
-				DEFAULT: "oklch(from var(--secondary) l c h / <alpha-value>)",
-				foreground:
-					"oklch(from var(--secondary-foreground) l c h / <alpha-value>)",
+				DEFAULT: "var(--secondary)",
+				foreground: "var(--secondary-foreground)",
 			},
 			muted: {
-				DEFAULT: "oklch(from var(--muted) l c h / <alpha-value>)",
-				foreground: "oklch(from var(--muted-foreground) l c h / <alpha-value>)",
+				DEFAULT: "var(--muted)",
+				foreground: "var(--muted-foreground)",
 			},
 			accent: {
-				DEFAULT: "oklch(from var(--accent) l c h / <alpha-value>)",
-				foreground:
-					"oklch(from var(--accent-foreground) l c h / <alpha-value>)",
+				DEFAULT: "var(--accent)",
+				foreground: "var(--accent-foreground)",
 			},
 			destructive: {
-				DEFAULT: "oklch(from var(--destructive) l c h / <alpha-value>)",
-				foreground:
-					"oklch(from var(--destructive-foreground) l c h / <alpha-value>)",
+				DEFAULT: "var(--destructive)",
+				foreground: "var(--destructive-foreground)",
 			},
 			danger: {
-				DEFAULT: "oklch(from var(--danger) l c h / <alpha-value>)",
-				foreground:
-					"oklch(from var(--danger-foreground) l c h / <alpha-value>)",
-				border: "oklch(from var(--danger-border) l c h / <alpha-value>)",
+				DEFAULT: "var(--danger)",
+				foreground: "var(--danger-foreground)",
+				border: "var(--danger-border)",
 			},
 			warning: {
-				DEFAULT: "oklch(from var(--warning) l c h / <alpha-value>)",
-				foreground:
-					"oklch(from var(--warning-foreground) l c h / <alpha-value>)",
-				border: "oklch(from var(--warning-border) l c h / <alpha-value>)",
+				DEFAULT: "var(--warning)",
+				foreground: "var(--warning-foreground)",
+				border: "var(--warning-border)",
 			},
 			info: {
-				DEFAULT: "oklch(from var(--info) l c h / <alpha-value>)",
-				foreground: "oklch(from var(--info-foreground) l c h / <alpha-value>)",
-				border: "oklch(from var(--info-border) l c h / <alpha-value>)",
+				DEFAULT: "var(--info)",
+				foreground: "var(--info-foreground)",
+				border: "var(--info-border)",
 			},
 			success: {
-				DEFAULT: "oklch(from var(--success) l c h / <alpha-value>)",
-				foreground:
-					"oklch(from var(--success-foreground) l c h / <alpha-value>)",
-				border: "oklch(from var(--success-border) l c h / <alpha-value>)",
+				DEFAULT: "var(--success)",
+				foreground: "var(--success-foreground)",
+				border: "var(--success-border)",
 			},
-			border: "oklch(from var(--border) l c h / <alpha-value>)",
-			input: "oklch(from var(--input) l c h / <alpha-value>)",
-			ring: "oklch(from var(--ring) l c h / <alpha-value>)",
+			border: "var(--border)",
+			input: "var(--input)",
+			ring: "var(--ring)",
 			chart: {
-				1: "oklch(from var(--chart-1) l c h / <alpha-value>)",
-				2: "oklch(from var(--chart-2) l c h / <alpha-value>)",
-				3: "oklch(from var(--chart-3) l c h / <alpha-value>)",
-				4: "oklch(from var(--chart-4) l c h / <alpha-value>)",
-				5: "oklch(from var(--chart-5) l c h / <alpha-value>)",
+				1: "var(--chart-1)",
+				2: "var(--chart-2)",
+				3: "var(--chart-3)",
+				4: "var(--chart-4)",
+				5: "var(--chart-5)",
 			},
 		},
 		animation: {
@@ -110,28 +102,5 @@ export default defineConfig({
 	rules: [
 		// Custom rules for step counter
 		["step", { "counter-increment": "step" }],
-		[
-			/^step-before$/,
-			() => ({
-				position: "absolute",
-				width: "2.5rem",
-				height: "2.5rem",
-				"background-color": "var(--muted)",
-				"border-radius": "9999px",
-				"font-family": "var(--font-geist-mono)",
-				"font-weight": "500",
-				"text-align": "center",
-				"font-size": "0.875rem",
-				display: "inline-flex",
-				"align-items": "center",
-				"justify-content": "center",
-				"text-indent": "-1px",
-				border: "4px solid var(--background)",
-				"margin-left": "-52px",
-				"margin-top": "-8px",
-				"letter-spacing": "-0.025em",
-				content: "counter(step)",
-			}),
-		],
 	],
 })

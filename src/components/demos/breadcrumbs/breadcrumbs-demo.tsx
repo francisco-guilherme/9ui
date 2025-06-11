@@ -1,5 +1,5 @@
-import Link from "next/link"
 import { EllipsisIcon } from "lucide-react"
+import { Link } from "react-router-dom"
 
 import {
 	Breadcrumb,
@@ -13,7 +13,7 @@ export default function BreadcrumbsDemo() {
 		<Breadcrumb>
 			<BreadcrumbList>
 				<BreadcrumbItem>
-					<Link href="/">Home</Link>
+					<Link to="/">Home</Link>
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>
@@ -21,7 +21,7 @@ export default function BreadcrumbsDemo() {
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>
-					<Link href="/docs/components">Components</Link>
+					<Link to="/docs/components">Components</Link>
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
 				<BreadcrumbItem active>Breadcrumbs</BreadcrumbItem>

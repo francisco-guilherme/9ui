@@ -1,5 +1,6 @@
 import { useState } from "react"
-import Image from "next/image"
+
+// import Image from "next/image" // Removed for Vite migration
 
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import {
@@ -30,11 +31,10 @@ export default function CarouselThumbnail() {
 								ratio={16 / 9}
 								className="rounded-lg border bg-background"
 							>
-								<Image
+								<img
 									src={slide}
 									alt="Carousel slide"
-									fill
-									className="rounded-lg object-cover"
+									className="rounded-lg object-cover w-full h-full"
 								/>
 							</AspectRatio>
 						</CarouselItem>
@@ -47,11 +47,10 @@ export default function CarouselThumbnail() {
 							className="relative size-10"
 							onClick={() => api?.scrollTo(index)}
 						>
-							<Image
+							<img
 								src={slide}
 								alt="Carousel slide"
-								fill
-								className="rounded-md object-cover opacity-80 transition-opacity duration-200 hover:opacity-100"
+								className="rounded-md object-cover opacity-80 transition-opacity duration-200 hover:opacity-100 w-full h-full"
 							/>
 						</button>
 					))}

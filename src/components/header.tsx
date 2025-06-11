@@ -1,7 +1,4 @@
-"use client"
-
 import * as React from "react"
-import Link from "next/link"
 
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
@@ -21,14 +18,14 @@ export const Header = () => {
 						variant="outline"
 						size="icon"
 						render={
-							<Link
+							<a
 								href="https://x.com/borabalogluu"
 								target="_blank"
 								rel="noreferrer"
 							>
 								<Icons.twitter />
 								<span className="sr-only">X</span>
-							</Link>
+							</a>
 						}
 					/>
 
@@ -36,14 +33,14 @@ export const Header = () => {
 						variant="outline"
 						size="icon"
 						render={
-							<Link
+							<a
 								href="https://github.com/borabaloglu/9ui"
 								target="_blank"
 								rel="noreferrer"
 							>
 								<Icons.gitHub />
 								<span className="sr-only">GitHub</span>
-							</Link>
+							</a>
 						}
 					/>
 					<ThemeToggle />

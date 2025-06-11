@@ -1,4 +1,4 @@
-import Image from "next/image"
+// import Image from "next/image" // Removed for Vite migration
 import { LinkIcon, SendIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -37,7 +37,7 @@ export default function CardDemo() {
 				<div className="flex flex-col gap-4">
 					<h4 className="text-sm font-medium">Invited Members</h4>
 					<div className="flex items-center gap-2">
-						<Image
+						<img
 							src="/memoji-1.png"
 							alt="Avatar"
 							width={24}
@@ -50,7 +50,7 @@ export default function CardDemo() {
 						</div>
 					</div>
 					<div className="flex items-center gap-2">
-						<Image
+						<img
 							src="/memoji-3.png"
 							alt="Avatar"
 							width={24}

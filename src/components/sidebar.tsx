@@ -1,7 +1,4 @@
-"use client"
-
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { Link, useLocation } from "react-router-dom"
 
 import { navConfig } from "@/config/nav"
 
@@ -23,26 +20,47 @@ export const DocsSidebarNavItems = ({
 	<div className="mt-1 space-y-0.5 text-sm">
 		{items.map((item, index) =>
 			!item.disabled && item.href ? (
-				<Link
-					key={index}
-					href={item.href}
-					onClick={onNavItemClick}
-					className={cn(
-						"-ml-2 flex w-full items-center justify-between gap-2 rounded-md border px-2 py-1.5 transition-colors hover:text-foreground",
-						pathname === item.href
-							? "bg-secondary/50 pl-2 text-foreground"
-							: "border-transparent text-muted-foreground"
-					)}
-					target={item.external ? "_blank" : ""}
-					rel={item.external ? "noreferrer" : ""}
-				>
-					{item.title}
-					{item.label && (
-						<span className="rounded bg-info px-1.5 py-0.5 text-xs font-medium text-info-foreground">
-							{item.label}
-						</span>
-					)}
-				</Link>
+				item.external ? (
+					<a
+						key={index}
+						href={item.href}
+						onClick={onNavItemClick}
+						className={cn(
+							"-ml-2 flex w-full items-center justify-between gap-2 rounded-md border px-2 py-1.5 transition-colors hover:text-foreground",
+							pathname === item.href
+								? "bg-secondary/50 pl-2 text-foreground"
+								: "border-transparent text-muted-foreground"
+						)}
+						target="_blank"
+						rel="noreferrer"
+					>
+						{item.title}
+						{item.label && (
+							<span className="rounded bg-info px-1.5 py-0.5 text-xs font-medium text-info-foreground">
+								{item.label}
+							</span>
+						)}
+					</a>
+				) : (
+					<Link
+						key={index}
+						to={item.href}
+						onClick={onNavItemClick}
+						className={cn(
+							"-ml-2 flex w-full items-center justify-between gap-2 rounded-md border px-2 py-1.5 transition-colors hover:text-foreground",
+							pathname === item.href
+								? "bg-secondary/50 pl-2 text-foreground"
+								: "border-transparent text-muted-foreground"
+						)}
+					>
+						{item.title}
+						{item.label && (
+							<span className="rounded bg-info px-1.5 py-0.5 text-xs font-medium text-info-foreground">
+								{item.label}
+							</span>
+						)}
+					</Link>
+				)
 			) : (
 				<span
 					key={index}
@@ -67,7 +85,8 @@ interface DocsSidebarNavProps {
 }
 
 export const DocsSidebarNav = ({ onNavItemClick }: DocsSidebarNavProps) => {
-	const pathname = usePathname()
+	const location = useLocation()
+	const pathname = location.pathname
 
 	return (
 		<>

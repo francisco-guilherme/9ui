@@ -1,9 +1,6 @@
-"use client"
-
 import * as React from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { EqualIcon } from "lucide-react"
+import { Link, useLocation } from "react-router-dom"
 
 import { Icons } from "@/components/icons"
 import { Button } from "@/components/ui/button"
@@ -72,7 +69,7 @@ export function MobileNav() {
 				</DrawerPortal>
 			</Drawer>
 			<Separator orientation="vertical" className="mx-2 my-auto h-6" />
-			<Link href="/" className="ml-2 flex items-center">
+			<Link to="/" className="ml-2 flex items-center">
 				<Icons.logo className="size-3" />
 				<span className="ml-0.5 font-mono text-lg font-black">ui</span>
 			</Link>
@@ -87,28 +84,49 @@ function MobileNavItem({
 	item: NavItem
 	onNavItemClick: () => void
 }) {
-	const pathname = usePathname()
+	const location = useLocation()
+	const pathname = location.pathname
 
 	return !item.disabled && item.href ? (
-		<Link
-			href={item.href}
-			onClick={onNavItemClick}
-			className={cn(
-				"-ml-2 flex w-full items-center justify-between gap-2 rounded-md border px-2 py-1.5 transition-colors hover:text-foreground",
-				pathname === item.href
-					? "bg-secondary/50 pl-2 text-foreground"
-					: "border-transparent text-muted-foreground"
-			)}
-			target={item.external ? "_blank" : ""}
-			rel={item.external ? "noreferrer" : ""}
-		>
-			{item.title}
-			{item.label && (
-				<span className="rounded bg-info px-1.5 py-0.5 text-xs font-medium text-info-foreground">
-					{item.label}
-				</span>
-			)}
-		</Link>
+		item.external ? (
+			<a
+				href={item.href}
+				onClick={onNavItemClick}
+				className={cn(
+					"-ml-2 flex w-full items-center justify-between gap-2 rounded-md border px-2 py-1.5 transition-colors hover:text-foreground",
+					pathname === item.href
+						? "bg-secondary/50 pl-2 text-foreground"
+						: "border-transparent text-muted-foreground"
+				)}
+				target="_blank"
+				rel="noreferrer"
+			>
+				{item.title}
+				{item.label && (
+					<span className="rounded bg-info px-1.5 py-0.5 text-xs font-medium text-info-foreground">
+						{item.label}
+					</span>
+				)}
+			</a>
+		) : (
+			<Link
+				to={item.href}
+				onClick={onNavItemClick}
+				className={cn(
+					"-ml-2 flex w-full items-center justify-between gap-2 rounded-md border px-2 py-1.5 transition-colors hover:text-foreground",
+					pathname === item.href
+						? "bg-secondary/50 pl-2 text-foreground"
+						: "border-transparent text-muted-foreground"
+				)}
+			>
+				{item.title}
+				{item.label && (
+					<span className="rounded bg-info px-1.5 py-0.5 text-xs font-medium text-info-foreground">
+						{item.label}
+					</span>
+				)}
+			</Link>
+		)
 	) : (
 		<span
 			className={cn(

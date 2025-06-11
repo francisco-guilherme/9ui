@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { Link } from "react-router-dom"
 
 import {
 	Breadcrumb,
@@ -12,13 +12,13 @@ export default function BreadcrumbsCustomSeparator() {
 		<Breadcrumb>
 			<BreadcrumbList>
 				<BreadcrumbItem>
-					<Link href="/">Home</Link>
+					<Link to="/">Home</Link>
 				</BreadcrumbItem>
 				<BreadcrumbSeparator>
 					<span>/</span>
 				</BreadcrumbSeparator>
 				<BreadcrumbItem>
-					<Link href="/docs/components">Components</Link>
+					<Link to="/docs/components">Components</Link>
 				</BreadcrumbItem>
 				<BreadcrumbSeparator>
 					<span>/</span>

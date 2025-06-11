@@ -1,5 +1,6 @@
 import { useState } from "react"
-import Image from "next/image"
+
+// import Image from "next/image" // Removed for Vite migration
 
 import {
 	Select,
@@ -39,11 +40,12 @@ export default function SelectWithCustomValue() {
 						{() =>
 							selected ? (
 								<div className="flex items-center gap-2">
-									<Image
+									<img
 										src={users[selected].image}
 										alt={users[selected].name}
 										width={16}
 										height={16}
+										className="rounded-full"
 									/>
 									{users[selected].name}
 								</div>
@@ -57,11 +59,12 @@ export default function SelectWithCustomValue() {
 					{Object.entries(users).map(([id, user]) => (
 						<SelectItem key={id} value={id}>
 							<div className="flex items-center gap-2">
-								<Image
+								<img
 									src={user.image}
 									alt={user.name}
 									width={16}
 									height={16}
+									className="rounded-full"
 								/>
 								{user.name}
 							</div>

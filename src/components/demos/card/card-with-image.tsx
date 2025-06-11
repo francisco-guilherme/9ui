@@ -1,4 +1,4 @@
-import Image from "next/image"
+// import Image from "next/image" // Removed for Vite migration
 
 import { Button } from "@/components/ui/button"
 import {
@@ -14,11 +14,10 @@ export default function CardWithImage() {
 		<Card className="max-w-80">
 			<CardHeader>
 				<div className="relative aspect-video rounded-lg">
-					<Image
+					<img
 						src="https://images.pexels.com/photos/1616403/pexels-photo-1616403.jpeg?auto=compress&cs=tinysrgb&w=450&h=800&dpr=2"
 						alt="Blog Image"
-						fill
-						className="rounded-lg"
+						className="rounded-lg w-full h-full object-cover"
 					/>
 				</div>
 				<CardTitle className="mt-2">What is 9ui?</CardTitle>

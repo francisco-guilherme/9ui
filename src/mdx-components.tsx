@@ -1,6 +1,6 @@
 import * as React from "react"
-import Link from "next/link"
 import { MessageSquareWarningIcon } from "lucide-react"
+import { Link } from "react-router-dom"
 
 import { CodeBlock } from "@/components/code-block"
 import { CommandBlock } from "@/components/command-block"
@@ -275,8 +275,13 @@ const components: MDXComponents = {
 			{...props}
 		/>
 	),
-	LinkCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
+	LinkCard: ({
+		className,
+		to,
+		...props
+	}: React.ComponentProps<typeof Link>) => (
 		<Link
+			to={to}
 			className={cn(
 				"flex w-full flex-col items-center justify-center gap-3 rounded-lg border bg-card p-10 font-medium text-card-foreground shadow transition-colors hover:bg-card/80 md:p-10",
 				className
