@@ -3,7 +3,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite",
-		"build": "pnpm prebuild && vite build",
+		"build": "bun prebuild && vite build",
 		"build:registry": "npx shadcn@2.3.0 build",
 		"start": "vite preview",
 		"lint": "eslint src --max-warnings 0",
@@ -11,9 +11,9 @@
 		"generate:contents": "npx tsx --tsconfig ./tsconfig.scripts.json ./scripts/generate-content-registry.ts && prettier --log-level silent --write \"src/__registry__/contents.tsx\" --cache",
 		"fix": "eslint src --fix",
 		"format": "prettier --log-level silent --write \"src/**/*.{js,ts,jsx,tsx,mdx}\" --cache",
-		"prebuild": "pnpm generate:contents && pnpm generate:demos && pnpm build:registry"
+		"prebuild": "bun generate:contents && bun generate:demos && bun build:registry"
 	},
-	"packageManager": "pnpm@10.10.0",
+	"packageManager": "bun@1.1.0",
 	"engines": {
 		"node": ">=20"
 	},
