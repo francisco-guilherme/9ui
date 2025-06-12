@@ -11,8 +11,9 @@ import {
 } from "@/components/ui/breadcrumbs"
 
 import { siteConfig } from "@/config/site"
+
+import { ContentData, loadContent } from "@/lib/content-loader"
 import { absoluteUrl } from "@/lib/url"
-import { loadContent, ContentData } from "@/lib/content-loader"
 
 const DocsPage = () => {
   const params = useParams()
@@ -27,13 +28,13 @@ const DocsPage = () => {
 
       // Get slug from params
       const slug = params["*"] || ""
-      
+
       // Handle redirects for common paths
       if (slug === "" || slug === "getting-started") {
         window.location.replace("/docs/getting-started/introduction")
         return
       }
-      
+
       if (slug === "components") {
         window.location.replace("/docs/components/accordion")
         return
@@ -53,9 +54,7 @@ const DocsPage = () => {
       document.title = `${data.metadata.title} - ${siteConfig.name}`
 
       // Set meta description
-      const metaDescription = document.querySelector(
-        'meta[name="description"]'
-      )
+      const metaDescription = document.querySelector('meta[name="description"]')
       if (metaDescription) {
         metaDescription.setAttribute("content", data.metadata.description)
       } else {
