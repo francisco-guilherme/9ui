@@ -7,6 +7,7 @@ import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
 import { createHighlighter } from "shiki"
 import { defineConfig } from "vite"
+import Pages from "vite-plugin-pages"
 import tsconfigPaths from "vite-tsconfig-paths"
 
 import {
@@ -20,6 +21,12 @@ export default defineConfig({
   plugins: [
     tsconfigPaths(),
     UnoCSS(),
+    Pages({
+      dirs: "src/pages",
+      extensions: ["tsx", "jsx", "ts", "js"],
+      resolver: "react",
+      importMode: "async",
+    }),
     mdx({
       remarkPlugins: [remarkGfm],
       rehypePlugins: [

@@ -1,8 +1,9 @@
-import { useEffect } from "react"
+import { Suspense, useEffect } from "react"
 import { useMDXComponents } from "@/mdx-components"
 import { MDXProvider } from "@mdx-js/react"
+import routes from "~react-pages"
 import { ThemeProvider } from "next-themes"
-import { Navigate, Route, Routes } from "react-router-dom"
+import { useRoutes } from "react-router-dom"
 
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
@@ -10,14 +11,9 @@ import { Toaster } from "@/components/ui/sonner"
 
 import { cn } from "@/lib/utils"
 
-import DocPage from "./pages/docs/DocPage"
-import DocsLayout from "./pages/docs/DocsLayout"
-import Home from "./pages/Home"
-import NotFound from "./pages/NotFound"
-import ThemesPage from "./pages/ThemesPage"
-
 function App() {
   const components = useMDXComponents()
+  const routeElements = useRoutes(routes)
 
   useEffect(() => {
     // Load Seline analytics script
@@ -45,36 +41,9 @@ function App() {
         >
           <Header />
           <main className="flex-1">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/themes" element={<ThemesPage />} />
-
-              {/* Redirects */}
-              <Route
-                path="/docs"
-                element={
-                  <Navigate to="/docs/getting-started/introduction" replace />
-                }
-              />
-              <Route
-                path="/docs/getting-started"
-                element={
-                  <Navigate to="/docs/getting-started/introduction" replace />
-                }
-              />
-              <Route
-                path="/docs/components"
-                element={<Navigate to="/docs/components/accordion" replace />}
-              />
-
-              {/* Docs routes */}
-              <Route path="/docs/*" element={<DocsLayout />}>
-                <Route path="*" element={<DocPage />} />
-              </Route>
-
-              {/* 404 route */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <Suspense fallback={<div>Loading...</div>}>
+              {routeElements}
+            </Suspense>
           </main>
           <Footer />
         </div>
