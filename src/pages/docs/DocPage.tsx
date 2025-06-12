@@ -60,8 +60,8 @@ const DocPage = () => {
           /* @vite-ignore */ `../../content/${entry.path}`
         )
 
-        // Extract TOC from the MDX module if available
-        const tocData = docModule.tableOfContents || []
+        // Use TOC from the registry (pre-generated at build time)
+        const tocData = entry.tableOfContents || []
 
         const docData: DocData = {
           Doc: docModule.default,

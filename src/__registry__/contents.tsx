@@ -13,6 +13,10 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Accordion", path: "/docs/components/accordion" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+    ],
   },
   "components/alert-dialog": {
     type: "file",
@@ -27,6 +31,10 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Alert Dialog", path: "/docs/components/alert-dialog" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+    ],
   },
   "components/alert": {
     type: "file",
@@ -39,6 +47,16 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Alert", path: "/docs/components/alert" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Success", url: "#success", depth: 3 },
+      { value: "Info", url: "#info", depth: 3 },
+      { value: "Warning", url: "#warning", depth: 3 },
+      { value: "Danger", url: "#danger", depth: 3 },
+      { value: "With action", url: "#with-action", depth: 3 },
     ],
   },
   "components/aspect-ratio": {
@@ -54,6 +72,10 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Aspect Ratio", path: "/docs/components/aspect-ratio" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+    ],
   },
   "components/avatar": {
     type: "file",
@@ -66,6 +88,13 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Avatar", path: "/docs/components/avatar" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Sizes", url: "#sizes", depth: 3 },
+      { value: "With Fallback", url: "#with-fallback", depth: 3 },
     ],
   },
   "components/badge": {
@@ -80,6 +109,17 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Badge", path: "/docs/components/badge" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Outline", url: "#outline", depth: 3 },
+      { value: "Secondary", url: "#secondary", depth: 3 },
+      { value: "Success", url: "#success", depth: 3 },
+      { value: "Warning", url: "#warning", depth: 3 },
+      { value: "Info", url: "#info", depth: 3 },
+      { value: "Danger", url: "#danger", depth: 3 },
+    ],
   },
   "components/breadcrumbs": {
     type: "file",
@@ -92,6 +132,12 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Breadcrumbs", path: "/docs/components/breadcrumbs" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Custom Separator", url: "#custom-separator", depth: 3 },
     ],
   },
   "components/button": {
@@ -106,6 +152,19 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Button", path: "/docs/components/button" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Sizes", url: "#sizes", depth: 3 },
+      { value: "With Icon", url: "#with-icon", depth: 3 },
+      { value: "Secondary", url: "#secondary", depth: 3 },
+      { value: "Outline", url: "#outline", depth: 3 },
+      { value: "Ghost", url: "#ghost", depth: 3 },
+      { value: "Link", url: "#link", depth: 3 },
+      { value: "Destructive", url: "#destructive", depth: 3 },
+      { value: "Loading", url: "#loading", depth: 3 },
+    ],
   },
   "components/calendar": {
     type: "file",
@@ -118,6 +177,15 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Calendar", path: "/docs/components/calendar" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Single Date", url: "#single-date", depth: 3 },
+      { value: "Multiple Dates", url: "#multiple-dates", depth: 3 },
+      { value: "Date Range", url: "#date-range", depth: 3 },
+      { value: "Disabled", url: "#disabled", depth: 3 },
     ],
   },
   "components/card": {
@@ -132,6 +200,12 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Card", path: "/docs/components/card" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "With image", url: "#with-image", depth: 3 },
+    ],
   },
   "components/carousel": {
     type: "file",
@@ -144,6 +218,15 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Carousel", path: "/docs/components/carousel" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Vertical", url: "#vertical", depth: 3 },
+      { value: "Multiple", url: "#multiple", depth: 3 },
+      { value: "Looped", url: "#looped", depth: 3 },
+      { value: "Thumbnail", url: "#thumbnail", depth: 3 },
     ],
   },
   "components/chart": {
@@ -158,6 +241,18 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Chart", path: "/docs/components/chart" },
     ],
+    tableOfContents: [
+      { value: "About", url: "#about", depth: 2 },
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Area Chart", url: "#area-chart", depth: 3 },
+      { value: "Bar Chart", url: "#bar-chart", depth: 3 },
+      { value: "Line Chart", url: "#line-chart", depth: 3 },
+      { value: "Pie Chart", url: "#pie-chart", depth: 3 },
+      { value: "Radar Chart", url: "#radar-chart", depth: 3 },
+      { value: "Radial Bar Chart", url: "#radial-bar-chart", depth: 3 },
+      { value: "Scatter Chart", url: "#scatter-chart", depth: 3 },
+    ],
   },
   "components/checkbox-group": {
     type: "file",
@@ -170,6 +265,10 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Checkbox Group", path: "/docs/components/checkbox-group" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
     ],
   },
   "components/checkbox": {
@@ -185,6 +284,14 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Checkbox", path: "/docs/components/checkbox" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "With Label", url: "#with-label", depth: 3 },
+      { value: "Disabled", url: "#disabled", depth: 3 },
+      { value: "Error", url: "#error", depth: 3 },
+    ],
   },
   "components/collapsible": {
     type: "file",
@@ -198,6 +305,10 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Collapsible", path: "/docs/components/collapsible" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+    ],
   },
   "components/combobox": {
     type: "file",
@@ -210,6 +321,10 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Combobox", path: "/docs/components/combobox" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
     ],
   },
   "components/command": {
@@ -225,6 +340,13 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Command", path: "/docs/components/command" },
     ],
+    tableOfContents: [
+      { value: "About", url: "#about", depth: 2 },
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Dialog", url: "#dialog", depth: 3 },
+    ],
   },
   "components/context-menu": {
     type: "file",
@@ -238,6 +360,10 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Context Menu", path: "/docs/components/context-menu" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+    ],
   },
   "components/date-picker": {
     type: "file",
@@ -247,6 +373,10 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Date Picker", path: "/docs/components/date-picker" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
     ],
   },
   "components/dialog": {
@@ -260,6 +390,12 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Dialog", path: "/docs/components/dialog" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Nested Dialogs", url: "#nested-dialogs", depth: 3 },
     ],
   },
   "components/drawer": {
@@ -275,6 +411,11 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Drawer", path: "/docs/components/drawer" },
     ],
+    tableOfContents: [
+      { value: "About", url: "#about", depth: 2 },
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+    ],
   },
   "components/dropdown": {
     type: "file",
@@ -287,6 +428,10 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Dropdown", path: "/docs/components/dropdown" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
     ],
   },
   "components/emoji-picker": {
@@ -301,6 +446,13 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Emoji Picker", path: "/docs/components/emoji-picker" },
     ],
+    tableOfContents: [
+      { value: "About", url: "#about", depth: 2 },
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Popover", url: "#popover", depth: 3 },
+    ],
   },
   "components/form": {
     type: "file",
@@ -313,6 +465,11 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Form", path: "/docs/components/form" },
+    ],
+    tableOfContents: [
+      { value: "About", url: "#about", depth: 2 },
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
     ],
   },
   "components/input-otp": {
@@ -327,6 +484,13 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Input Otp", path: "/docs/components/input-otp" },
     ],
+    tableOfContents: [
+      { value: "About", url: "#about", depth: 2 },
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Custom", url: "#custom", depth: 3 },
+    ],
   },
   "components/input": {
     type: "file",
@@ -340,6 +504,14 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Input", path: "/docs/components/input" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "With Icons", url: "#with-icons", depth: 3 },
+      { value: "Disabled", url: "#disabled", depth: 3 },
+      { value: "Error", url: "#error", depth: 3 },
+    ],
   },
   "components/kbd": {
     type: "file",
@@ -352,6 +524,10 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Kbd", path: "/docs/components/kbd" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
     ],
   },
   "components/menubar": {
@@ -367,6 +543,10 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Menubar", path: "/docs/components/menubar" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+    ],
   },
   "components/meter": {
     type: "file",
@@ -380,6 +560,10 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Meter", path: "/docs/components/meter" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+    ],
   },
   "components/popover": {
     type: "file",
@@ -389,6 +573,10 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Popover", path: "/docs/components/popover" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
     ],
   },
   "components/preview-card": {
@@ -403,6 +591,10 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Preview Card", path: "/docs/components/preview-card" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+    ],
   },
   "components/progress": {
     type: "file",
@@ -415,6 +607,12 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Progress", path: "/docs/components/progress" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "With Value", url: "#with-value", depth: 3 },
     ],
   },
   "components/radio-group": {
@@ -430,6 +628,12 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Radio Group", path: "/docs/components/radio-group" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Disabled", url: "#disabled", depth: 3 },
+    ],
   },
   "components/scroll-area": {
     type: "file",
@@ -443,6 +647,12 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Scroll Area", path: "/docs/components/scroll-area" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Horizontal", url: "#horizontal", depth: 3 },
+    ],
   },
   "components/select": {
     type: "file",
@@ -455,6 +665,13 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Select", path: "/docs/components/select" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Custom value", url: "#custom-value", depth: 3 },
+      { value: "With groups", url: "#with-groups", depth: 3 },
     ],
   },
   "components/separator": {
@@ -470,6 +687,10 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Separator", path: "/docs/components/separator" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+    ],
   },
   "components/sheet": {
     type: "file",
@@ -482,6 +703,12 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Sheet", path: "/docs/components/sheet" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Sides", url: "#sides", depth: 3 },
     ],
   },
   "components/skeleton": {
@@ -496,6 +723,10 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Skeleton", path: "/docs/components/skeleton" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+    ],
   },
   "components/slider": {
     type: "file",
@@ -508,6 +739,14 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Slider", path: "/docs/components/slider" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Disabled", url: "#disabled", depth: 3 },
+      { value: "Range", url: "#range", depth: 3 },
+      { value: "With Value", url: "#with-value", depth: 3 },
     ],
   },
   "components/sonner": {
@@ -522,6 +761,15 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Sonner", path: "/docs/components/sonner" },
     ],
+    tableOfContents: [
+      { value: "About", url: "#about", depth: 2 },
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Promise", url: "#promise", depth: 3 },
+      { value: "Action", url: "#action", depth: 3 },
+      { value: "Rich Colors", url: "#rich-colors", depth: 3 },
+    ],
   },
   "components/switch": {
     type: "file",
@@ -534,6 +782,13 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Switch", path: "/docs/components/switch" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "With Label", url: "#with-label", depth: 3 },
+      { value: "Disabled", url: "#disabled", depth: 3 },
     ],
   },
   "components/table": {
@@ -549,6 +804,10 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Table", path: "/docs/components/table" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+    ],
   },
   "components/tabs": {
     type: "file",
@@ -562,6 +821,13 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Tabs", path: "/docs/components/tabs" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Underlined", url: "#underlined", depth: 3 },
+      { value: "Disabled", url: "#disabled", depth: 3 },
+    ],
   },
   "components/textarea": {
     type: "file",
@@ -574,6 +840,13 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Textarea", path: "/docs/components/textarea" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Disabled", url: "#disabled", depth: 3 },
+      { value: "Error", url: "#error", depth: 3 },
     ],
   },
   "components/toggle-group": {
@@ -589,6 +862,12 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Toggle Group", path: "/docs/components/toggle-group" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Multiple", url: "#multiple", depth: 3 },
+    ],
   },
   "components/toggle": {
     type: "file",
@@ -601,6 +880,14 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Components", path: "/docs/components" },
       { label: "Toggle", path: "/docs/components/toggle" },
+    ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Sizes", url: "#sizes", depth: 3 },
+      { value: "Custom Control", url: "#custom-control", depth: 3 },
+      { value: "Disabled", url: "#disabled", depth: 3 },
     ],
   },
   "components/toolbar": {
@@ -615,6 +902,12 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Toolbar", path: "/docs/components/toolbar" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "File Explorer", url: "#file-explorer", depth: 3 },
+    ],
   },
   "components/tooltip": {
     type: "file",
@@ -628,6 +921,12 @@ export const contentRegistry: ContentRegistry = {
       { label: "Components", path: "/docs/components" },
       { label: "Tooltip", path: "/docs/components/tooltip" },
     ],
+    tableOfContents: [
+      { value: "Installation", url: "#installation", depth: 2 },
+      { value: "Usage", url: "#usage", depth: 2 },
+      { value: "Examples", url: "#examples", depth: 2 },
+      { value: "Custom Position", url: "#custom-position", depth: 3 },
+    ],
   },
   "getting-started/changelog": {
     type: "file",
@@ -637,6 +936,14 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Getting Started", path: "/docs/getting-started" },
       { label: "Changelog", path: "/docs/getting-started/changelog" },
+    ],
+    tableOfContents: [
+      { value: "02/05/2025", url: "#02052025", depth: 2 },
+      { value: "21/03/2025", url: "#21032025", depth: 2 },
+      { value: "23/02/2025", url: "#23022025", depth: 2 },
+      { value: "18/02/2025", url: "#18022025", depth: 2 },
+      { value: "08/02/2025", url: "#08022025", depth: 2 },
+      { value: "31/12/2024", url: "#31122024", depth: 2 },
     ],
   },
   "getting-started/dark-mode/astro": {
@@ -652,6 +959,7 @@ export const contentRegistry: ContentRegistry = {
       { label: "Dark Mode", path: "/docs/getting-started/dark-mode" },
       { label: "Astro", path: "/docs/getting-started/dark-mode/astro" },
     ],
+    tableOfContents: [],
   },
   "getting-started/dark-mode": {
     type: "index",
@@ -665,6 +973,7 @@ export const contentRegistry: ContentRegistry = {
       { label: "Getting Started", path: "/docs/getting-started" },
       { label: "Dark Mode", path: "/docs/getting-started/dark-mode" },
     ],
+    tableOfContents: [],
   },
   "getting-started/dark-mode/next": {
     type: "file",
@@ -679,6 +988,7 @@ export const contentRegistry: ContentRegistry = {
       { label: "Dark Mode", path: "/docs/getting-started/dark-mode" },
       { label: "Next", path: "/docs/getting-started/dark-mode/next" },
     ],
+    tableOfContents: [],
   },
   "getting-started/dark-mode/remix": {
     type: "file",
@@ -693,6 +1003,7 @@ export const contentRegistry: ContentRegistry = {
       { label: "Dark Mode", path: "/docs/getting-started/dark-mode" },
       { label: "Remix", path: "/docs/getting-started/dark-mode/remix" },
     ],
+    tableOfContents: [],
   },
   "getting-started/dark-mode/vite": {
     type: "file",
@@ -707,6 +1018,7 @@ export const contentRegistry: ContentRegistry = {
       { label: "Dark Mode", path: "/docs/getting-started/dark-mode" },
       { label: "Vite", path: "/docs/getting-started/dark-mode/vite" },
     ],
+    tableOfContents: [],
   },
   "getting-started/installation": {
     type: "file",
@@ -720,6 +1032,7 @@ export const contentRegistry: ContentRegistry = {
       { label: "Getting Started", path: "/docs/getting-started" },
       { label: "Installation", path: "/docs/getting-started/installation" },
     ],
+    tableOfContents: [{ value: "Icons", url: "#icons", depth: 1 }],
   },
   "getting-started/introduction": {
     type: "file",
@@ -734,6 +1047,16 @@ export const contentRegistry: ContentRegistry = {
       { label: "Getting Started", path: "/docs/getting-started" },
       { label: "Introduction", path: "/docs/getting-started/introduction" },
     ],
+    tableOfContents: [
+      { value: "Why Base UI?", url: "#why-base-ui", depth: 2 },
+      {
+        value: "Is it production ready?",
+        url: "#is-it-production-ready",
+        depth: 2,
+      },
+      { value: "Thank you", url: "#thank-you", depth: 2 },
+      { value: "FAQ", url: "#faq", depth: 2 },
+    ],
   },
   "getting-started/roadmap": {
     type: "file",
@@ -744,6 +1067,7 @@ export const contentRegistry: ContentRegistry = {
       { label: "Getting Started", path: "/docs/getting-started" },
       { label: "Roadmap", path: "/docs/getting-started/roadmap" },
     ],
+    tableOfContents: [],
   },
   "getting-started/theming": {
     type: "file",
@@ -756,6 +1080,18 @@ export const contentRegistry: ContentRegistry = {
     breadcrumbs: [
       { label: "Getting Started", path: "/docs/getting-started" },
       { label: "Theming", path: "/docs/getting-started/theming" },
+    ],
+    tableOfContents: [
+      { value: "Color Tokens", url: "#color-tokens", depth: 2 },
+      { value: "Base Colors", url: "#base-colors", depth: 3 },
+      { value: "Interactive Elements", url: "#interactive-elements", depth: 3 },
+      { value: "Status Colors", url: "#status-colors", depth: 3 },
+      { value: "Utility Colors", url: "#utility-colors", depth: 3 },
+      { value: "Chart Colors", url: "#chart-colors", depth: 3 },
+      { value: "Why OKLCH?", url: "#why-oklch", depth: 2 },
+      { value: "Customizing Colors", url: "#customizing-colors", depth: 2 },
+      { value: "Adding New Colors", url: "#adding-new-colors", depth: 3 },
+      { value: "Using Custom Colors", url: "#using-custom-colors", depth: 3 },
     ],
   },
 }

@@ -17,6 +17,12 @@ export interface ContentEntry {
     label: string
     path: string
   }[]
+  /** Table of contents extracted from the content */
+  tableOfContents: {
+    value: string
+    url: string
+    depth: number
+  }[]
 }
 
 export type ContentRegistry = Record<string, ContentEntry>

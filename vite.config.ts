@@ -15,7 +15,6 @@ import {
   rehypeComponentSource,
   rehypeRawString,
 } from "./src/lib/rehype/component/index.mjs"
-import { rehypeExtractTocExport } from "./src/lib/rehype/extract-toc.mjs"
 
 export default defineConfig({
   plugins: [
@@ -26,7 +25,6 @@ export default defineConfig({
       rehypePlugins: [
         rehypeSlug,
         rehypeAutolinkHeadings,
-        rehypeExtractTocExport,
         rehypeRawString,
         rehypeComponentPreview,
         rehypeComponentSource,

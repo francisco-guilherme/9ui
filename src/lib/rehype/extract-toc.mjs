@@ -42,12 +42,11 @@ export function rehypeExtractTocExport() {
     })
 
     // Add the TOC as a named export to the MDX module
-    if (toc.length > 0) {
-      tree.children.push({
-        type: "mdxjsEsm",
-        value: `export const tableOfContents = ${JSON.stringify(toc)};`
-      })
-    }
+    // Always export tableOfContents, even if empty
+    tree.children.push({
+      type: "mdxjsEsm",
+      value: `export const tableOfContents = ${JSON.stringify(toc)};`
+    })
 
     // Store in file data as well for compatibility
     file.data.toc = toc
