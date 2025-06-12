@@ -53,11 +53,4 @@ export default defineConfig({
     outDir: "dist",
     sourcemap: true,
   },
-  server: {
-    port: 3000,
-    open: true,
-  },
-  define: {
-    "process.env.SELINE_TOKEN": JSON.stringify(process.env.VITE_SELINE_TOKEN),
-  },
 })

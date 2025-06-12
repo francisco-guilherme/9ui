@@ -13,7 +13,7 @@
   "files": [
     {
       "path": "src/components/ui/form.tsx",
-      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { FieldValues, FormProvider, UseFormReturn } from \"react-hook-form\"\n\ninterface FormProps<T extends FieldValues = FieldValues>\n\textends React.FormHTMLAttributes<HTMLFormElement> {\n\tform: UseFormReturn<T>\n}\n\nconst Form = <T extends FieldValues>({\n\tchildren,\n\tform,\n\t...props\n}: FormProps<T>) => (\n\t<FormProvider {...form}>\n\t\t<form {...props}>{children}</form>\n\t</FormProvider>\n)\n\nexport { Form }\n",
+      "content": "import * as React from \"react\"\nimport { FieldValues, FormProvider, UseFormReturn } from \"react-hook-form\"\n\ninterface FormProps<T extends FieldValues = FieldValues>\n  extends React.FormHTMLAttributes<HTMLFormElement> {\n  form: UseFormReturn<T>\n}\n\nconst Form = <T extends FieldValues>({\n  children,\n  form,\n  ...props\n}: FormProps<T>) => (\n  <FormProvider {...form}>\n    <form {...props}>{children}</form>\n  </FormProvider>\n)\n\nexport { Form }\n",
       "type": "registry:ui",
       "target": ""
     }

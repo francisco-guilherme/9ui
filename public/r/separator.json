@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "src/components/ui/separator.tsx",
-      "content": "import * as React from \"react\"\nimport { Separator as BaseSeparator } from \"@base-ui-components/react/separator\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface SeparatorProps extends BaseSeparator.Props {\n\torientation?: \"horizontal\" | \"vertical\"\n}\n\nconst Separator = React.forwardRef<\n\tReact.ElementRef<typeof BaseSeparator>,\n\tSeparatorProps\n>(({ className, orientation = \"horizontal\", ...props }, ref) => (\n\t<BaseSeparator\n\t\tref={ref}\n\t\tclassName={cn(\n\t\t\t\"shrink-0 bg-muted\",\n\t\t\torientation === \"horizontal\" ? \"h-px\" : \"w-px\",\n\t\t\tclassName\n\t\t)}\n\t\t{...props}\n\t/>\n))\nSeparator.displayName = BaseSeparator.displayName\n\nexport { Separator }\n",
+      "content": "import * as React from \"react\"\nimport { Separator as BaseSeparator } from \"@base-ui-components/react/separator\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface SeparatorProps extends BaseSeparator.Props {\n  orientation?: \"horizontal\" | \"vertical\"\n}\n\nconst Separator = React.forwardRef<\n  React.ElementRef<typeof BaseSeparator>,\n  SeparatorProps\n>(({ className, orientation = \"horizontal\", ...props }, ref) => (\n  <BaseSeparator\n    ref={ref}\n    className={cn(\n      \"shrink-0 bg-muted\",\n      orientation === \"horizontal\" ? \"h-px\" : \"w-px\",\n      className\n    )}\n    {...props}\n  />\n))\nSeparator.displayName = BaseSeparator.displayName\n\nexport { Separator }\n",
       "type": "registry:ui",
       "target": ""
     }
