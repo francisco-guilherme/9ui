@@ -6,17 +6,17 @@ import { cn } from "@/lib/utils"
 
 import { type SidebarNavGroup } from "@/types/nav"
 
-interface DocsSidebarNavItemsProps {
+interface SidebarNavItemsProps {
   items: SidebarNavGroup["items"]
   pathname: string | null
   onNavItemClick?: () => void
 }
 
-export const DocsSidebarNavItems = ({
+export const SidebarNavItems = ({
   items,
   pathname,
   onNavItemClick,
-}: DocsSidebarNavItemsProps) => (
+}: SidebarNavItemsProps) => (
   <div className="mt-1 space-y-0.5 text-sm">
     {items.map((item, index) =>
       !item.disabled && item.href ? (
@@ -80,11 +80,11 @@ export const DocsSidebarNavItems = ({
   </div>
 )
 
-interface DocsSidebarNavProps {
+interface SidebarNavProps {
   onNavItemClick?: () => void
 }
 
-export const DocsSidebarNav = ({ onNavItemClick }: DocsSidebarNavProps) => {
+export const SidebarNav = ({ onNavItemClick }: SidebarNavProps) => {
   const location = useLocation()
   const pathname = location.pathname
 
@@ -96,7 +96,7 @@ export const DocsSidebarNav = ({ onNavItemClick }: DocsSidebarNavProps) => {
             {group.title}
           </h4>
           {group.items.length && (
-            <DocsSidebarNavItems
+            <SidebarNavItems
               items={group.items}
               pathname={pathname}
               onNavItemClick={onNavItemClick}

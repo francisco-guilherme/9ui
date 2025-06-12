@@ -4,11 +4,8 @@ import { BrowserRouter } from "react-router-dom"
 
 import App from "./App"
 
-import "./app/globals.css"
-import "./app/syntax.css"
-// Load fonts
-import "@fontsource-variable/inter"
-import "@fontsource-variable/geist-mono"
+import "./styles/globals.css"
+import "./styles/syntax.css"
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

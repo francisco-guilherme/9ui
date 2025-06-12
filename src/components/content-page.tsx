@@ -15,30 +15,43 @@ import { siteConfig } from "@/config/site"
 import { ContentData, loadContent } from "@/lib/content-loader"
 import { absoluteUrl } from "@/lib/url"
 
-const DocsPage = () => {
+interface ContentPageProps {
+  section: string
+  defaultRedirect: string
+}
+
+export const ContentPage = ({ section, defaultRedirect }: ContentPageProps) => {
   const params = useParams()
   const [contentData, setContentData] = useState<ContentData | null>(null)
   const [loading, setLoading] = useState(true)
   const [notFound, setNotFound] = useState(false)
 
   useEffect(() => {
-    const loadDocContent = async () => {
+    const loadContentData = async () => {
       setLoading(true)
       setNotFound(false)
 
       // Get slug from params
-      const slug = params["*"] || ""
+      const rawSlug = params["*"] || ""
 
       // Handle redirects for common paths
-      if (slug === "" || slug === "getting-started") {
-        window.location.replace("/docs/getting-started/introduction")
+      if (rawSlug === section) {
+        window.location.replace(defaultRedirect)
         return
       }
 
-      if (slug === "components") {
-        window.location.replace("/docs/components/accordion")
+      // Handle cross-section redirects
+      if (rawSlug === "docs" && section !== "docs") {
+        window.location.replace("/docs/introduction")
         return
       }
+      if (rawSlug === "components" && section !== "components") {
+        window.location.replace("/components/accordion")
+        return
+      }
+
+      // Construct the full slug for content registry lookup
+      const slug = `${section}/${rawSlug}`
 
       const data = await loadContent(slug)
 
@@ -78,7 +91,7 @@ const DocsPage = () => {
       setMetaTag("og:title", data.metadata.title)
       setMetaTag("og:description", data.metadata.description)
       setMetaTag("og:type", "article")
-      setMetaTag("og:url", absoluteUrl("docs", slug))
+      setMetaTag("og:url", absoluteUrl(section, rawSlug))
       setMetaTag("og:image", siteConfig.ogImage)
       setMetaTag("og:image:width", "1200")
       setMetaTag("og:image:height", "630")
@@ -104,8 +117,8 @@ const DocsPage = () => {
       setLoading(false)
     }
 
-    loadDocContent()
-  }, [params])
+    loadContentData()
+  }, [params, section, defaultRedirect])
 
   if (loading) {
     return (
@@ -126,7 +139,7 @@ const DocsPage = () => {
   }
 
   if (notFound || !contentData) {
-    return <Navigate to="/404" replace />
+    return <Navigate to="/not-found" replace />
   }
 
   return (
@@ -157,5 +170,3 @@ const DocsPage = () => {
     </main>
   )
 }
-
-export default DocsPage

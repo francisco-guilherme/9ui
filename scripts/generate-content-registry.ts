@@ -54,7 +54,7 @@ async function findContentFiles(): Promise<ContentFile[]> {
       const label = segments[index] || "Home"
       return {
         label: changeCase.capitalCase(label),
-        path: `/docs/${path}`,
+        path: `/${path}`,
       }
     })
 

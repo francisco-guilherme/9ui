@@ -23,7 +23,7 @@ export default defineConfig({
     UnoCSS(),
     Pages({
       dirs: "src/pages",
-      extensions: ["tsx", "jsx", "ts", "js"],
+      extensions: ["tsx"],
       resolver: "react",
       importMode: "async",
     }),

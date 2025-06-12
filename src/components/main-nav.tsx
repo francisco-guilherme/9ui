@@ -18,7 +18,7 @@ export function MainNav() {
       <Separator orientation="vertical" className="mx-4 my-auto h-6" />
       <nav className="flex items-center gap-6 text-sm">
         <Link
-          to="/docs"
+          to="/docs/introduction"
           className={cn(
             "transition-colors hover:text-foreground",
             pathname.startsWith("/docs/getting-started")
@@ -29,7 +29,7 @@ export function MainNav() {
           Docs
         </Link>
         <Link
-          to="/docs/components"
+          to="/components/accordion"
           className={cn(
             "transition-colors hover:text-foreground",
             pathname?.startsWith("/docs/components")
