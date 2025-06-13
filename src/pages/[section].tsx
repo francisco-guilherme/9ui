@@ -1,23 +1,23 @@
 import { Navigate, useParams } from "react-router-dom"
 
-import { SidebarLayout } from "@/components/sidebar-layout"
+import { Sidebar } from "../components/sidebar"
 
-// Valid sections that use the sidebar layout
-const SIDEBAR_SECTIONS = ["docs", "components"] as const
 type SidebarSection = (typeof SIDEBAR_SECTIONS)[number]
+
+const SIDEBAR_SECTIONS = ["docs", "components"] as const
 
 const isSidebarSection = (value: unknown): value is SidebarSection =>
   typeof value === "string" &&
   SIDEBAR_SECTIONS.includes(value as SidebarSection)
 
-const UnifiedSectionLayout = () => {
+const SectionRouter = () => {
   const { section } = useParams()
 
   if (!isSidebarSection(section)) {
     return <Navigate to="/docs/introduction" replace />
   }
 
-  return <SidebarLayout />
+  return <Sidebar />
 }
 
-export default UnifiedSectionLayout
+export default SectionRouter

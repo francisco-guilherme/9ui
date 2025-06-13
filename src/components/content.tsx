@@ -2,25 +2,24 @@ import { useEffect, useState } from "react"
 import * as React from "react"
 import { Link, Navigate, useParams } from "react-router-dom"
 
-import { TableOfContents } from "@/components/toc"
+import { siteConfig } from "@/config/site"
+
+import { ContentData, loadContent } from "@/lib/content-loader"
+
+import { TableOfContents } from "./toc"
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbList,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumbs"
+} from "./ui/breadcrumbs"
 
-import { siteConfig } from "@/config/site"
-
-import { ContentData, loadContent } from "@/lib/content-loader"
-import { absoluteUrl } from "@/lib/url"
-
-interface ContentPageProps {
+interface ContentProps {
   section: string
   defaultRedirect: string
 }
 
-export const ContentPage = ({ section, defaultRedirect }: ContentPageProps) => {
+export const Content = ({ section, defaultRedirect }: ContentProps) => {
   const params = useParams()
   const [contentData, setContentData] = useState<ContentData | null>(null)
   const [loading, setLoading] = useState(true)
@@ -76,43 +75,6 @@ export const ContentPage = ({ section, defaultRedirect }: ContentPageProps) => {
         meta.content = data.metadata.description
         document.head.appendChild(meta)
       }
-
-      // Set Open Graph meta tags
-      const setMetaTag = (property: string, content: string) => {
-        let meta = document.querySelector(`meta[property="${property}"]`)
-        if (!meta) {
-          meta = document.createElement("meta")
-          meta.setAttribute("property", property)
-          document.head.appendChild(meta)
-        }
-        meta.setAttribute("content", content)
-      }
-
-      setMetaTag("og:title", data.metadata.title)
-      setMetaTag("og:description", data.metadata.description)
-      setMetaTag("og:type", "article")
-      setMetaTag("og:url", absoluteUrl(section, rawSlug))
-      setMetaTag("og:image", siteConfig.ogImage)
-      setMetaTag("og:image:width", "1200")
-      setMetaTag("og:image:height", "630")
-      setMetaTag("og:image:alt", siteConfig.name)
-
-      // Set Twitter meta tags
-      const setTwitterTag = (name: string, content: string) => {
-        let meta = document.querySelector(`meta[name="${name}"]`)
-        if (!meta) {
-          meta = document.createElement("meta")
-          meta.setAttribute("name", name)
-          document.head.appendChild(meta)
-        }
-        meta.setAttribute("content", content)
-      }
-
-      setTwitterTag("twitter:card", "summary_large_image")
-      setTwitterTag("twitter:title", data.metadata.title)
-      setTwitterTag("twitter:description", data.metadata.description)
-      setTwitterTag("twitter:image", siteConfig.ogImage)
-      setTwitterTag("twitter:creator", "@borabalogluu")
 
       setLoading(false)
     }

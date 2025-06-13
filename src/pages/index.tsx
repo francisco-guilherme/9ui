@@ -1,35 +1,16 @@
-import { useEffect } from "react"
 import { ArrowRightIcon, BookOpenIcon } from "lucide-react"
 import { Link } from "react-router-dom"
 
-import Examples from "@/components/examples"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-
-import { siteConfig } from "@/config/site"
+import { ExamplesSection } from "../components/pages/examples-section"
+import { Badge } from "../components/ui/badge"
+import { Button } from "../components/ui/button"
+import { Separator } from "../components/ui/separator"
 
 const Home = () => {
-  useEffect(() => {
-    // Set page title and meta description
-    document.title = siteConfig.name
-
-    // Set meta description
-    const metaDescription = document.querySelector('meta[name="description"]')
-    if (metaDescription) {
-      metaDescription.setAttribute("content", siteConfig.description)
-    } else {
-      const meta = document.createElement("meta")
-      meta.name = "description"
-      meta.content = siteConfig.description
-      document.head.appendChild(meta)
-    }
-  }, [])
-
   return (
     <div className="container flex flex-col gap-12 py-10">
       <main className="flex flex-col gap-8">
-        <div className="flex flex-col items-center">
+        <section className="flex flex-col items-center">
           <Badge variant="outline" className="h-8 gap-2">
             <span>🎉</span>First components are here!
           </Badge>
@@ -78,9 +59,9 @@ const Home = () => {
               }
             />
           </div>
-        </div>
+        </section>
         <Separator />
-        <Examples />
+        <ExamplesSection />
       </main>
     </div>
   )

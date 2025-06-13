@@ -3,11 +3,14 @@ import dayjs from "dayjs"
 import { CalendarIcon, ClockIcon, GlobeIcon, UserPlusIcon } from "lucide-react"
 
 import { Icons } from "@/components/icons"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
-import { Card } from "@/components/ui/card"
+
+import { cn } from "@/lib/utils"
+
+import { Avatar, AvatarFallback } from "../../ui/avatar"
+import { Badge } from "../../ui/badge"
+import { Button } from "../../ui/button"
+import { Calendar } from "../../ui/calendar"
+import { Card } from "../../ui/card"
 import {
   Dialog,
   DialogClose,
@@ -16,9 +19,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "../../ui/dialog"
+import { Input } from "../../ui/input"
+import { Label } from "../../ui/label"
 import {
   Select,
   SelectContent,
@@ -27,10 +30,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
-
-import { cn } from "@/lib/utils"
+} from "../../ui/select"
+import { Textarea } from "../../ui/textarea"
 
 const generateTimeSlots = () => {
   const slots: string[] = []
@@ -51,7 +52,7 @@ const formatDate = (date: Date) => {
   return dayjs(date).format("ddd DD")
 }
 
-export const CalendarInterface = () => {
+export const CalendarExample = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date())
   const [is24Hour, setIs24Hour] = useState(true)
 

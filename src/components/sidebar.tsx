@@ -1,109 +1,18 @@
-import { Link, useLocation } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 
-import { navConfig } from "@/config/nav"
+import { SidebarNav } from "./nav/sidebar-nav"
 
-import { cn } from "@/lib/utils"
-
-import { type SidebarNavGroup } from "@/types/nav"
-
-interface SidebarNavItemsProps {
-  items: SidebarNavGroup["items"]
-  pathname: string | null
-  onNavItemClick?: () => void
-}
-
-export const SidebarNavItems = ({
-  items,
-  pathname,
-  onNavItemClick,
-}: SidebarNavItemsProps) => (
-  <div className="mt-1 space-y-0.5 text-sm">
-    {items.map((item, index) =>
-      !item.disabled && item.href ? (
-        item.external ? (
-          <a
-            key={index}
-            href={item.href}
-            onClick={onNavItemClick}
-            className={cn(
-              "-ml-2 flex w-full items-center justify-between gap-2 rounded-md border px-2 py-1.5 transition-colors hover:text-foreground",
-              pathname === item.href
-                ? "bg-secondary/50 pl-2 text-foreground"
-                : "border-transparent text-muted-foreground"
-            )}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {item.title}
-            {item.label && (
-              <span className="rounded bg-info px-1.5 py-0.5 text-xs font-medium text-info-foreground">
-                {item.label}
-              </span>
-            )}
-          </a>
-        ) : (
-          <Link
-            key={index}
-            to={item.href}
-            onClick={onNavItemClick}
-            className={cn(
-              "-ml-2 flex w-full items-center justify-between gap-2 rounded-md border px-2 py-1.5 transition-colors hover:text-foreground",
-              pathname === item.href
-                ? "bg-secondary/50 pl-2 text-foreground"
-                : "border-transparent text-muted-foreground"
-            )}
-          >
-            {item.title}
-            {item.label && (
-              <span className="rounded bg-info px-1.5 py-0.5 text-xs font-medium text-info-foreground">
-                {item.label}
-              </span>
-            )}
-          </Link>
-        )
-      ) : (
-        <span
-          key={index}
-          className={cn(
-            "-ml-2 flex w-full cursor-not-allowed items-center justify-between gap-2 border border-transparent px-2 py-1.5 text-muted-foreground opacity-60"
-          )}
-        >
-          {item.title}
-          {item.label && (
-            <span className="rounded bg-info px-1.5 py-0.5 text-xs font-medium text-info-foreground">
-              {item.label}
-            </span>
-          )}
-        </span>
-      )
-    )}
-  </div>
-)
-
-interface SidebarNavProps {
-  onNavItemClick?: () => void
-}
-
-export const SidebarNav = ({ onNavItemClick }: SidebarNavProps) => {
-  const location = useLocation()
-  const pathname = location.pathname
-
+export const Sidebar = () => {
   return (
-    <>
-      {navConfig.sidebarNav.map((group, index) => (
-        <div key={index} className="pb-4">
-          <h4 className="mb-1 text-sm font-semibold text-foreground">
-            {group.title}
-          </h4>
-          {group.items.length && (
-            <SidebarNavItems
-              items={group.items}
-              pathname={pathname}
-              onNavItemClick={onNavItemClick}
-            />
-          )}
+    <div className="container mx-auto gap-8 px-4 md:grid md:grid-cols-[220px_minmax(0,1fr)] xl:grid-cols-[240px_1fr]">
+      <aside className="fixed top-14 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 border-r md:sticky md:block">
+        <div className="scrollbar-hidden h-full overflow-y-auto px-2 py-8">
+          <SidebarNav />
         </div>
-      ))}
-    </>
+      </aside>
+      <main className="min-h-screen py-8">
+        <Outlet />
+      </main>
+    </div>
   )
 }

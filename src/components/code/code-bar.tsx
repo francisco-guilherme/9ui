@@ -1,6 +1,6 @@
-import { CopyButton } from "@/components/copy-button"
-
 import { cn } from "@/lib/utils"
+
+import { CopyButton } from "./copy-button"
 
 interface CodeBarProps {
   label?: string | React.ReactNode

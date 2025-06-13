@@ -1,5 +1,5 @@
-import { CodeBar } from "@/components/code-bar"
-import { CodeBlock } from "@/components/code-block"
+import { CodeBar } from "../code/code-bar"
+import { CodeBlock } from "../code/code-block"
 
 interface ComponentAnatomyProps {
   content: string

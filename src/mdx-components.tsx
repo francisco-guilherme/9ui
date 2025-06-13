@@ -2,32 +2,32 @@ import * as React from "react"
 import { MessageSquareWarningIcon } from "lucide-react"
 import { Link } from "react-router-dom"
 
-import { CodeBlock } from "@/components/code-block"
-import { CommandBlock } from "@/components/command-block"
-import { ComponentAnatomy } from "@/components/component-anatomy"
-import { ComponentInstallation } from "@/components/component-installation"
-import { ComponentLinks } from "@/components/component-links"
-import { ComponentPreview } from "@/components/component-preview"
-import { ComponentSource } from "@/components/component-source"
-import { Icons } from "@/components/icons"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { cn } from "@/lib/utils"
+
+import { CodeBlock } from "./components/code/code-block"
+import { Icons } from "./components/icons"
+import { CommandBlock } from "./components/mdx/command-block"
+import { ComponentAnatomy } from "./components/mdx/component-anatomy"
+import { ComponentInstallation } from "./components/mdx/component-installation"
+import { ComponentLinks } from "./components/mdx/component-links"
+import { ComponentPreview } from "./components/mdx/component-preview"
+import { ComponentSource } from "./components/mdx/component-source"
+import { ThemeSwitcher } from "./components/theme-switcher"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "./components/ui/accordion"
 import {
   Alert,
   AlertContent,
   AlertDescription,
   AlertIcon,
   AlertTitle,
-} from "@/components/ui/alert"
-import { Separator } from "@/components/ui/separator"
-import { Tab, TabContent, Tabs, TabsList } from "@/components/ui/tabs"
-
-import { cn } from "@/lib/utils"
+} from "./components/ui/alert"
+import { Separator } from "./components/ui/separator"
+import { Tab, TabContent, Tabs, TabsList } from "./components/ui/tabs"
 
 interface MDXComponents {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -309,7 +309,7 @@ const components: MDXComponents = {
   ComponentInstallation,
   ComponentAnatomy,
   Icons,
-  ThemeToggle,
+  ThemeSwitcher,
 }
 
 export function useMDXComponents(): MDXComponents {

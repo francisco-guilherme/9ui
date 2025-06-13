@@ -1,11 +1,9 @@
 import { Suspense, useState } from "react"
 
-import { CardsGrid } from "@/components/cards-grid"
-import { CustomizeToolbar } from "@/components/customize-toolbar"
-
-import { ThemeSettings } from "@/config/theme"
-
-import { generateTheme } from "@/lib/generate-theme"
+import { CardsGrid } from "../components/pages/cards-grid"
+import { CustomizeTheme } from "../components/pages/customize-theme"
+import { ThemeSettings } from "../config/theme"
+import { generateTheme } from "../lib/generate-theme"
 
 const Themes = () => {
   const [theme, setTheme] = useState<ThemeSettings>({
@@ -23,7 +21,7 @@ const Themes = () => {
           <p className="text-sm text-muted-foreground">
             Customize your theme and see the changes live.
           </p>
-          <CustomizeToolbar theme={theme} setTheme={setTheme} />
+          <CustomizeTheme theme={theme} setTheme={setTheme} />
         </div>
         <CardsGrid />
         <Suspense fallback={<div>Loading...</div>}>

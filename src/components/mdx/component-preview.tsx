@@ -1,14 +1,14 @@
 import * as React from "react"
 import { Loader2Icon, RefreshCwIcon } from "lucide-react"
 
-import { CodeBar } from "@/components/code-bar"
-import { Button } from "@/components/ui/button"
-
 import { cn } from "@/lib/utils"
 
 import { demoRegistry } from "@/registry/demos"
 
 import type { DemoRegistry } from "@/types/demo"
+
+import { CodeBar } from "../code/code-bar"
+import { Button } from "../ui/button"
 
 type DemoName = keyof DemoRegistry
 

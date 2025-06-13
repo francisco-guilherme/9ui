@@ -1,13 +1,12 @@
 import { Suspense } from "react"
-import { useMDXComponents } from "@/mdx-components"
 import { MDXProvider } from "@mdx-js/react"
 import routes from "~react-pages"
 import { useRoutes } from "react-router-dom"
 
-import { Footer } from "@/components/footer"
-import { Header } from "@/components/header"
-
-import { cn } from "@/lib/utils"
+import { Footer } from "./components/footer"
+import { Header } from "./components/header"
+import { cn } from "./lib/utils"
+import { useMDXComponents } from "./mdx-components"
 
 function App() {
   const components = useMDXComponents()

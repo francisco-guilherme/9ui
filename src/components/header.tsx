@@ -1,8 +1,9 @@
 import { Icons } from "@/components/icons"
-import { MainNav } from "@/components/main-nav"
-import { MobileNav } from "@/components/mobile-nav"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { Button } from "@/components/ui/button"
+
+import { MainNav } from "./nav/main-nav"
+import { MobileNav } from "./nav/mobile-nav"
+import { ThemeSwitcher } from "./theme-switcher"
+import { Button } from "./ui/button"
 
 export const Header = () => {
   return (
@@ -41,7 +42,7 @@ export const Header = () => {
               </a>
             }
           />
-          <ThemeToggle />
+          <ThemeSwitcher />
         </div>
       </div>
     </header>

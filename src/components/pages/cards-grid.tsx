@@ -1,12 +1,12 @@
-import { AuthCard } from "@/components/cards/card-auth"
-import { CalendarCard } from "@/components/cards/card-calendar"
-import { ChatCard } from "@/components/cards/card-chat"
-import { FeedbackCard } from "@/components/cards/card-feedback"
-import { ManageMembersCard } from "@/components/cards/card-manage-members"
-import { OTPCard } from "@/components/cards/card-otp"
-import { PrivacySettingsCard } from "@/components/cards/card-privacy-settings"
-import { TableCard } from "@/components/cards/card-table"
-import { VisitorsChartCard } from "@/components/cards/card-visitors-chart"
+import { AuthCard } from "./cards/auth-card"
+import { CalendarCard } from "./cards/calendar-card"
+import { ChatCard } from "./cards/chat-card"
+import { FeedbackCard } from "./cards/feedback-card"
+import { ManageMembersCard } from "./cards/manage-members-card"
+import { OTPCard } from "./cards/otp-card"
+import { PrivacySettingsCard } from "./cards/privacy-settings-card"
+import { TableCard } from "./cards/table-card"
+import { VisitorsChartCard } from "./cards/visitors-chart-card"
 
 export const CardsGrid = () => {
   return (

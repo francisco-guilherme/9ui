@@ -1,12 +1,12 @@
 import React from "react"
 
-import { CodeBar } from "@/components/code-bar"
-import { Tab, TabContent, Tabs, TabsList } from "@/components/ui/tabs"
-
 import {
   getHighlighterSync,
   highlighter,
 } from "@/lib/rehype/syntax-highlighting"
+
+import { CodeBar } from "../code/code-bar"
+import { Tab, TabContent, Tabs, TabsList } from "../ui/tabs"
 
 interface CommandBlockProps {
   npmCommand: string

@@ -1,9 +1,9 @@
 import * as React from "react"
 
-import { CodeBar } from "@/components/code-bar"
-import { Button } from "@/components/ui/button"
-
 import { cn } from "@/lib/utils"
+
+import { CodeBar } from "../code/code-bar"
+import { Button } from "../ui/button"
 
 interface ComponentSourceProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string

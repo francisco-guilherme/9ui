@@ -1,9 +1,9 @@
 import React from "react"
 import { CheckIcon, CopyIcon } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-
 import { cn } from "@/lib/utils"
+
+import { Button } from "../ui/button"
 
 interface CopyButtonProps
   extends React.ComponentPropsWithoutRef<typeof Button> {

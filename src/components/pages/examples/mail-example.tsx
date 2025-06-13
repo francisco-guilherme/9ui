@@ -288,7 +288,7 @@ const MailItem = ({
   </button>
 )
 
-export const MailInterface = () => {
+export const MailExample = () => {
   const [selectedEmailId, setSelectedEmailId] = useState(1)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [isContentOpen, setIsContentOpen] = useState(false)

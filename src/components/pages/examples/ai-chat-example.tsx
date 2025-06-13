@@ -65,7 +65,7 @@ const sampleChats: Chat[] = [
   },
 ]
 
-export const AIChatInterface = () => {
+export const AiChatExample = () => {
   const [messages, setMessages] = useState<Message[]>(initialMessages)
   const [inputValue, setInputValue] = useState("")
   const [isLoading, setIsLoading] = useState(false)

@@ -1,4 +1,4 @@
-import { CodeBar } from "@/components/code-bar"
+import { CodeBar } from "./code-bar"
 
 interface CodeBlockProps {
   content: string

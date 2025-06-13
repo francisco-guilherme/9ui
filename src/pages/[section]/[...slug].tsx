@@ -1,6 +1,8 @@
-import { Navigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
-import { ContentPage } from "@/components/content-page"
+import { Content } from "../../components/content"
+
+type SectionType = keyof typeof SECTION_CONFIG
 
 const SECTION_CONFIG = {
   docs: {
@@ -11,21 +13,18 @@ const SECTION_CONFIG = {
   },
 } as const
 
-type SectionType = keyof typeof SECTION_CONFIG
+const SectionContent = () => {
+  const params = useParams()
+  const section = params.section as SectionType
 
-const isValidSection = (value: unknown): value is SectionType =>
-  typeof value === "string" && value in SECTION_CONFIG
-
-const UnifiedContentPage = () => {
-  const { section } = useParams()
-
-  if (!isValidSection(section)) {
-    return <Navigate to={SECTION_CONFIG.docs.defaultRedirect} replace />
+  if (!section || !SECTION_CONFIG[section]) {
+    window.location.replace("/docs/introduction")
+    return null
   }
 
-  const { defaultRedirect } = SECTION_CONFIG[section]
+  const config = SECTION_CONFIG[section]
 
-  return <ContentPage section={section} defaultRedirect={defaultRedirect} />
+  return <Content section={section} defaultRedirect={config.defaultRedirect} />
 }
 
-export default UnifiedContentPage
+export default SectionContent

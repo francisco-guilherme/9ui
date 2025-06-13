@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { Tab, TabContent, Tabs, TabsList } from "@/components/ui/tabs"
+import { Tab, TabContent, Tabs, TabsList } from "../ui/tabs"
 
 interface ComponentInstallationProps {
   children: React.ReactNode

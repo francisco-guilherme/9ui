@@ -1,11 +1,11 @@
 import { Link, useLocation } from "react-router-dom"
 
 import { Icons } from "@/components/icons"
-import { Separator } from "@/components/ui/separator"
 
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
+import { Separator } from "../ui/separator"
 
-export function MainNav() {
+export const MainNav = () => {
   const location = useLocation()
   const pathname = location.pathname
 
