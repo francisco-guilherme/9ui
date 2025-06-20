@@ -1,0 +1,21 @@
+{
+  "remove": ["scripts", "devDependencies", "clean-package"],
+  "replace": {
+    "type": "module",
+    "main": "dist/index.mjs",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.mts",
+    "sideEffects": false,
+    "exports": {
+      ".": {
+        "import": "./dist/index.mjs",
+        "types": "./dist/index.d.mts"
+      },
+      "./src/theme.css": "./src/theme.css"
+    },
+    "files": ["dist", "src/theme.css"],
+    "publishConfig": {
+      "access": "public"
+    }
+  }
+}
