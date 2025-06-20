@@ -1,0 +1,28 @@
+{
+  "name": "@nui/vite-plugin-docs",
+  "version": "0.1.0",
+  "description": "nui vite plugin",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsup --config ../../.config/tsup.config.ts",
+    "typecheck": "tsc --noEmit",
+    "prepack": "bun run build && clean-package",
+    "postpack": "clean-package restore"
+  },
+  "dependencies": {
+    "@mdx-js/rollup": "^3.1.0",
+    "@nui/ui": "*",
+    "fast-glob": "^3.3.3",
+    "gray-matter": "^4.0.3",
+    "react-router-dom": "^7.6.3"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6"
+  },
+  "clean-package": "../../.config/clean-package.json"
+}

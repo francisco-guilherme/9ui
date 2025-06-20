@@ -1,0 +1,22 @@
+{
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "<BUILTIN_MODULES>",
+    "^react$",
+    "^react-.*",
+    "<THIRD_PARTY_MODULES>",
+    "^@nui/(.*)$",
+    "",
+    "^~/(.*)$",
+    "^#/(.*)$",
+    "^[../]"
+  ],
+  "overrides": [
+    {
+      "files": ["bun.lock", "*.mdx", "*.md", "*.d.ts"],
+      "options": {
+        "rangeEnd": 0
+      }
+    }
+  ]
+}
