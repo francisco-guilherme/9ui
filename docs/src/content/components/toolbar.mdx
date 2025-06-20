@@ -1,0 +1,59 @@
+---
+title: "CodeBar"
+description: "Displays a CodeBar for user interaction."
+links:
+  - label: "Docs"
+    href: "https://base-ui.com/react/components/CodeBar"
+
+---
+<ComponentPreview name="CodeBar-demo" />
+
+## Installation
+
+<ComponentInstallation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/CodeBar.json
+```
+</div>
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="CodeBar" />
+
+</Steps>
+</ComponentInstallation>
+
+## Usage
+
+```tsx title="Imports"
+import {
+  CodeBar,
+  CodeBarButton,
+  CodeBarGroup,
+  CodeBarInput,
+  CodeBarLink,
+  CodeBarSeparator,
+} from "@9ui/uiCodeBar";
+```
+
+```tsx title="Anatomy"
+<CodeBar>
+  <CodeBarButton />
+  <CodeBarLink />
+  <CodeBarSeparator />
+  <CodeBarGroup>
+    <CodeBarButton />
+    <CodeBarButton />
+  <CodeBarGroup />
+  <CodeBarInput />
+</CodeBar>
+```
+
+## Examples
+
+### File Explorer
+
+<ComponentPreview name="CodeBar-file-explorer" />
