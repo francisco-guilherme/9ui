@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+/* Generated themes from themes.json */
+
+/* Default theme: Neutral */
+@theme {
+  --color-background: oklch(0.985 0 0);
+  --color-foreground: oklch(0.145 0 0);
+  --color-primary: oklch(0.145 0 0);
+  --color-primary-foreground: oklch(0.985 0 0);
+  --color-secondary: oklch(0.922 0 0);
+  --color-secondary-foreground: oklch(0.371 0 0);
+  --color-muted: oklch(0.946 0 0);
+  --color-muted-foreground: oklch(0.439 0 0);
+  --color-destructive: oklch(0.541 0.229 27.422);
+  --color-destructive-foreground: oklch(0.985 0 0);
+  --color-border: oklch(0.87 0 0);
+  --color-input: oklch(0.97 0 0);
+  --color-ring: oklch(0.922 0 0);
+}
+
+/* Dark mode - system preference */
+@media (prefers-color-scheme: dark) {
+  @theme {
+  --color-background: oklch(0.145 0 0);
+  --color-foreground: oklch(0.985 0 0);
+  --color-primary: oklch(0.985 0 0);
+  --color-primary-foreground: oklch(0.145 0 0);
+  --color-secondary: oklch(0.205 0 0);
+  --color-secondary-foreground: oklch(0.632 0 0);
+  --color-muted: oklch(0.237 0 0);
+  --color-muted-foreground: oklch(0.556 0 0);
+  --color-destructive: oklch(0.396 0.141 25.723);
+  --color-destructive-foreground: oklch(0.985 0 0);
+  --color-border: oklch(0.32 0 0);
+  --color-input: oklch(0.205 0 0);
+  --color-ring: oklch(0.405 0 0);
+  }
+}
+
+/* Class-based dark mode */
+.dark {
+  --color-background: oklch(0.145 0 0);
+  --color-foreground: oklch(0.985 0 0);
+  --color-primary: oklch(0.985 0 0);
+  --color-primary-foreground: oklch(0.145 0 0);
+  --color-secondary: oklch(0.205 0 0);
+  --color-secondary-foreground: oklch(0.632 0 0);
+  --color-muted: oklch(0.237 0 0);
+  --color-muted-foreground: oklch(0.556 0 0);
+  --color-destructive: oklch(0.396 0.141 25.723);
+  --color-destructive-foreground: oklch(0.985 0 0);
+  --color-border: oklch(0.32 0 0);
+  --color-input: oklch(0.205 0 0);
+  --color-ring: oklch(0.405 0 0);
+}
+
+/* Theme variant: Gray */
+.theme-gray {
+  --color-background: oklch(0.985 0.002 247.839);
+  --color-foreground: oklch(0.13 0.028 261.692);
+  --color-primary: oklch(0.13 0.028 261.692);
+  --color-primary-foreground: oklch(0.985 0.002 247.839);
+  --color-secondary: oklch(0.928 0.006 264.531);
+  --color-secondary-foreground: oklch(0.373 0.034 259.733);
+  --color-muted: oklch(0.948 0.0045 264.537);
+  --color-muted-foreground: oklch(0.446 0.03 256.802);
+  --color-destructive: oklch(0.541 0.229 27.422);
+  --color-destructive-foreground: oklch(0.985 0 0);
+  --color-border: oklch(0.872 0.01 258.338);
+  --color-input: oklch(0.967 0.003 264.542);
+  --color-ring: oklch(0.928 0.006 264.531);
+}
+
+.theme-gray.dark {
+  --color-background: oklch(0.13 0.028 261.692);
+  --color-foreground: oklch(0.985 0.002 247.839);
+  --color-primary: oklch(0.985 0.002 247.839);
+  --color-primary-foreground: oklch(0.13 0.028 261.692);
+  --color-secondary: oklch(0.21 0.034 264.665);
+  --color-secondary-foreground: oklch(0.629 0.0245 262.845);
+  --color-muted: oklch(0.244 0.0335 260.757);
+  --color-muted-foreground: oklch(0.551 0.027 264.364);
+  --color-destructive: oklch(0.396 0.141 25.723);
+  --color-destructive-foreground: oklch(0.985 0 0);
+  --color-border: oklch(0.326 0.0335 258.291);
+  --color-input: oklch(0.21 0.034 264.665);
+  --color-ring: oklch(0.41 0.032 258.268);
+}
+
+/* Theme variant: Slate */
+.theme-slate {
+  --color-background: oklch(0.984 0.003 247.858);
+  --color-foreground: oklch(0.129 0.042 264.695);
+  --color-primary: oklch(0.129 0.042 264.695);
+  --color-primary-foreground: oklch(0.984 0.003 247.858);
+  --color-secondary: oklch(0.929 0.013 255.508);
+  --color-secondary-foreground: oklch(0.372 0.044 257.287);
+  --color-muted: oklch(0.949 0.01 251.702);
+  --color-muted-foreground: oklch(0.446 0.043 257.281);
+  --color-destructive: oklch(0.541 0.229 27.422);
+  --color-destructive-foreground: oklch(0.985 0 0);
+  --color-border: oklch(0.869 0.022 252.894);
+  --color-input: oklch(0.968 0.007 247.896);
+  --color-ring: oklch(0.929 0.013 255.508);
+}
+
+.theme-slate.dark {
+  --color-background: oklch(0.129 0.042 264.695);
+  --color-foreground: oklch(0.984 0.003 247.858);
+  --color-primary: oklch(0.984 0.003 247.858);
+  --color-primary-foreground: oklch(0.129 0.042 264.695);
+  --color-secondary: oklch(0.208 0.042 265.755);
+  --color-secondary-foreground: oklch(0.629 0.043 257.103);
+  --color-muted: oklch(0.244 0.0415 262.893);
+  --color-muted-foreground: oklch(0.554 0.046 257.417);
+  --color-destructive: oklch(0.396 0.141 25.723);
+  --color-destructive-foreground: oklch(0.985 0 0);
+  --color-border: oklch(0.326 0.0425 258.659);
+  --color-input: oklch(0.208 0.042 265.755);
+  --color-ring: oklch(0.409 0.0435 257.284);
+}
+
+/* Theme variant: Purple */
+.theme-purple {
+  --color-background: oklch(0.98 0.02 300);
+  --color-foreground: oklch(0.15 0.08 300);
+  --color-primary: oklch(0.5 0.2 300);
+  --color-primary-foreground: oklch(0.98 0.02 300);
+  --color-secondary: oklch(0.92 0.05 300);
+  --color-secondary-foreground: oklch(0.35 0.12 300);
+  --color-muted: oklch(0.94 0.03 300);
+  --color-muted-foreground: oklch(0.45 0.1 300);
+  --color-destructive: oklch(0.541 0.229 27.422);
+  --color-destructive-foreground: oklch(0.985 0 0);
+  --color-border: oklch(0.87 0.04 300);
+  --color-input: oklch(0.96 0.03 300);
+  --color-ring: oklch(0.5 0.2 300);
+}
+
+.theme-purple.dark {
+  --color-background: oklch(0.15 0.08 300);
+  --color-foreground: oklch(0.98 0.02 300);
+  --color-primary: oklch(0.7 0.15 300);
+  --color-primary-foreground: oklch(0.15 0.08 300);
+  --color-secondary: oklch(0.25 0.1 300);
+  --color-secondary-foreground: oklch(0.75 0.08 300);
+  --color-muted: oklch(0.3 0.06 300);
+  --color-muted-foreground: oklch(0.65 0.05 300);
+  --color-destructive: oklch(0.396 0.141 25.723);
+  --color-destructive-foreground: oklch(0.985 0 0);
+  --color-border: oklch(0.35 0.06 300);
+  --color-input: oklch(0.25 0.1 300);
+  --color-ring: oklch(0.7 0.15 300);
+}
+
+/* Base styles */
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}

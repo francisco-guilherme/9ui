@@ -1,0 +1,255 @@
+---
+title: "Theming"
+description: "Simple theming system with TypeScript support and React hooks"
+---
+
+# Theming
+
+nui features a simple theming system built with OKLCH color space, TypeScript, and React hooks. The system supports multiple theme variants, automatic dark mode detection, and provides full type safety.
+
+## Quick Start
+
+### Using the React Hook
+
+The easiest way to manage themes is with the `useTheme` hook:
+
+```tsx
+import { useTheme, ThemeToggle } from "@nui/ui";
+
+function App() {
+  const {
+    mode,
+    variant,
+    setMode,
+    setVariant,
+    isDark,
+    toggleMode,
+    cycleVariant
+  } = useTheme();
+
+  return (
+    <div>
+      <p>Current theme: {variant} {mode}</p>
+      <p>Is dark: {isDark}</p>
+      <ThemeToggle />
+    </div>
+  );
+}
+```
+
+### Theme Provider (Optional)
+
+For more control, wrap your app with the theme provider:
+
+```tsx
+import { ThemeProvider } from "@nui/ui";
+
+function App() {
+  return (
+    <ThemeProvider defaultConfig={{ mode: "dark", variant: "slate" }}>
+      <YourApp />
+    </ThemeProvider>
+  );
+}
+```
+
+## Theme Configuration
+
+### Theme Modes
+
+- **light**: Force light mode
+- **dark**: Force dark mode
+- **auto**: Follow system preference (default)
+
+### Theme Variants
+
+The theme system supports three built-in variants:
+
+- **neutral**: Pure grayscale for maximum contrast (default)
+- **gray**: Subtle blue-tinted grays for warmth
+- **slate**: Cool blue-grays for modern feel
+
+You can add custom theme variants by defining CSS classes with the pattern `.theme-{name}` in your stylesheets.
+
+### TypeScript Support
+
+```tsx
+import type { ThemeConfig, ThemeMode, ThemeVariant } from "@nui/ui";
+
+const config: ThemeConfig = {
+  mode: "auto",
+  variant: "neutral"
+};
+```
+
+### Theme Toggle Component
+
+```tsx
+// Combined mode and variant toggle
+<ThemeToggle />
+
+// Mode only (light/dark/auto)
+<ThemeToggle modeOnly />
+
+// Variant only (neutral/gray/slate)
+<ThemeToggle variantOnly />
+```
+
+The theme system automatically detects available theme variants from your CSS at runtime:
+
+```tsx
+import { getAvailableThemeVariants, getAvailableThemeVariantNames } from "@nui/ui";
+
+// Get detailed theme information
+const themes = getAvailableThemeVariants();
+console.log(themes);
+// [
+//   { name: "neutral", displayName: "Neutral", description: "Pure grayscale..." },
+//   { name: "gray", displayName: "Gray", description: "Subtle blue-tinted..." },
+//   { name: "slate", displayName: "Slate", description: "Cool blue-grays..." }
+// ]
+
+// Get just the theme names
+const themeNames = getAvailableThemeVariantNames();
+console.log(themeNames); // ["neutral", "gray", "slate"]
+```
+
+### Adding Custom Themes
+
+To add a custom theme, define CSS classes following the `.theme-{name}` pattern:
+
+```css
+/* Custom theme: purple */
+.theme-purple {
+  --color-background: oklch(0.98 0.02 300);
+  --color-foreground: oklch(0.15 0.08 300);
+  --color-primary: oklch(0.5 0.2 300);
+  --color-primary-foreground: oklch(0.98 0.02 300);
+  --color-secondary: oklch(0.92 0.05 300);
+  --color-secondary-foreground: oklch(0.35 0.12 300);
+  --color-muted: oklch(0.94 0.03 300);
+  --color-muted-foreground: oklch(0.45 0.1 300);
+  --color-destructive: oklch(0.541 0.229 27.422);
+  --color-destructive-foreground: oklch(0.985 0 0);
+  --color-border: oklch(0.87 0.04 300);
+  --color-input: oklch(0.96 0.03 300);
+  --color-ring: oklch(0.5 0.2 300);
+}
+
+.theme-purple.dark {
+  --color-background: oklch(0.15 0.08 300);
+  --color-foreground: oklch(0.98 0.02 300);
+  --color-primary: oklch(0.7 0.15 300);
+  --color-primary-foreground: oklch(0.15 0.08 300);
+  /* ... other dark mode colors */
+}
+```
+
+The theme system will automatically detect and include your custom theme in the available options.
+
+## Theme Toggle Components
+
+### Basic Toggle
+
+```tsx
+import { ThemeToggle } from "@nui/ui";
+
+// Combined mode and variant toggle
+<ThemeToggle />
+
+// Mode only (light/dark/auto)
+<ThemeToggle modeOnly />
+
+// Variant only (neutral/gray/slate)
+<ThemeToggle variantOnly />
+```
+
+### Custom Toggle
+
+```tsx
+import { useTheme } from "@nui/ui";
+
+function CustomThemeToggle() {
+  const { mode, variant, toggleMode, cycleVariant } = useTheme();
+
+  return (
+    <div className="flex gap-2">
+      <button onClick={toggleMode}>
+        {mode === "light" ? "🌞" : mode === "dark" ? "🌙" : "🔄"}
+      </button>
+      <button onClick={cycleVariant}>
+        {variant}
+      </button>
+    </div>
+  );
+}
+```
+
+## CSS Usage
+
+### Semantic Color Tokens
+
+```tsx
+// Primary colors
+<Button className="bg-primary text-primary-foreground">
+  Primary Button
+</Button>
+
+// Semantic colors
+<div className="bg-success text-success-foreground border border-success-border">
+  Success message
+</div>
+
+// Chart colors
+<div className="bg-chart-1">Chart 1</div>
+<div className="bg-chart-2">Chart 2</div>
+```
+
+### Manual Theme Classes
+
+```tsx
+// Apply specific variant
+<div className="theme-gray">
+  <Button>Gray themed button</Button>
+</div>
+
+// Force dark mode
+<div className="dark">
+  <Button>Always dark</Button>
+</div>
+
+// Combine variant and mode
+<div className="theme-slate dark">
+  <Button>Dark slate theme</Button>
+</div>
+```
+
+## Customization
+
+### Override Colors
+
+```css
+:root {
+  --color-primary: oklch(0.6 0.2 280); /* Custom purple */
+  --color-accent: oklch(0.8 0.15 120); /* Custom green */
+}
+```
+
+### Custom Variants
+
+```css
+.theme-custom {
+  --color-background: oklch(0.98 0.01 120);
+  --color-foreground: oklch(0.15 0.05 120);
+  --color-primary: oklch(0.5 0.2 120);
+  /* ... other colors */
+}
+```
+
+## Best Practices
+
+1. **Use the React Hook**: `useTheme()` provides reactive theme state
+2. **Leverage TypeScript**: Full type safety for theme configuration
+3. **Test All Variants**: Ensure your UI works with all theme combinations
+4. **Respect System Preferences**: Use "auto" mode as default when possible
+5. **Persist User Choice**: Theme configuration is automatically saved to localStorage

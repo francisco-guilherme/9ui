@@ -1,0 +1,219 @@
+---
+title: "Installation"
+description: "Get started with nui in your React project"
+---
+
+# Installation
+
+Get up and running with nui in your React project in just a few steps.
+
+## Prerequisites
+
+Before installing nui, make sure you have:
+
+- **Node.js** 18 or later
+- **React** 18 or later
+- **TypeScript** (recommended but not required)
+
+## Package Manager
+
+nui supports all major package managers. Choose your preferred one:
+
+### Bun (Recommended)
+
+```bash
+bun add @nui/ui
+```
+
+### npm
+
+```bash
+npm install @nui/ui
+```
+
+### yarn
+
+```bash
+yarn add @nui/ui
+```
+
+### pnpm
+
+```bash
+pnpm add @nui/ui
+```
+
+## Peer Dependencies
+
+nui requires React and React DOM as peer dependencies. If you don't have them installed:
+
+```bash
+# With bun
+bun add react react-dom
+
+# With npm
+npm install react react-dom
+
+# With yarn
+yarn add react react-dom
+
+# With pnpm
+pnpm add react react-dom
+```
+
+## Tailwind CSS Setup
+
+nui is built with Tailwind CSS. If you don't have Tailwind CSS set up in your project, follow these steps:
+
+### 1. Install Tailwind CSS
+
+```bash
+# With bun
+bun add -D tailwindcss postcss autoprefixer
+
+# With npm
+npm install -D tailwindcss postcss autoprefixer
+
+# With yarn
+yarn add -D tailwindcss postcss autoprefixer
+
+# With pnpm
+pnpm add -D tailwindcss postcss autoprefixer
+```
+
+### 2. Initialize Tailwind CSS
+
+```bash
+npx tailwindcss init -p
+```
+
+### 3. Configure Tailwind CSS
+
+Update your `tailwind.config.js` file:
+
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@nui/ui/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+### 4. Add Tailwind directives
+
+Add the Tailwind directives to your CSS file (usually `src/index.css`):
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+## TypeScript Configuration
+
+If you're using TypeScript, add the following to your `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx"
+  }
+}
+```
+
+## First Component
+
+Now you can start using nui components in your project:
+
+```tsx
+import { Button } from "@nui/ui";
+
+function App() {
+  return (
+    <div className="p-8">
+      <h1 className="text-2xl font-bold mb-4">Hello nui!</h1>
+      <Button onClick={() => alert("Hello!")}>Click me</Button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+## Tree Shaking
+
+nui supports tree shaking out of the box. You can import only the components you need:
+
+```tsx
+// Import specific components
+import { Button, Card, CardHeader, CardContent } from "@nui/ui";
+
+// Or import from specific paths (also tree-shakeable)
+import { Button } from "@nui/ui/button";
+import { Card } from "@nui/ui/card";
+```
+
+## Vite Configuration
+
+If you're using Vite, you might want to add this optimization to your `vite.config.ts`:
+
+```ts
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  plugins: [react()],
+  optimizeDeps: {
+    include: ["@nui/ui"],
+  },
+});
+```
+
+## Next.js Configuration
+
+For Next.js projects, add this to your `next.config.js`:
+
+```js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  transpilePackages: ["@nui/ui"],
+};
+
+module.exports = nextConfig;
+```
+
+## Troubleshooting
+
+### Common Issues
+
+**CSS not loading**: Make sure you've included the Tailwind directives in your CSS file and configured the content paths correctly.
+
+**TypeScript errors**: Ensure you have the correct TypeScript configuration and that React types are installed.
+
+**Components not rendering**: Check that you've imported the components correctly and that React is properly set up.
+
+### Getting Help
+
+If you encounter any issues:
+
+1. Check our [GitHub Issues](https://github.com/your-org/nui/issues)
+2. Join our [Discord community](https://discord.gg/nui)
+3. Review the [troubleshooting guide](https://github.com/your-org/nui/wiki/troubleshooting)
+
+## What's Next?
+
+Now that you have nui installed, you can:
+
+- Explore the [component documentation](/components/button)
+- Check out [examples and patterns](/examples)
+- Learn about [theming and customization](/theming)
+- Join our [community](https://github.com/your-org/nui)

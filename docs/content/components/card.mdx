@@ -1,0 +1,160 @@
+---
+title: "Card"
+description: "Flexible content container component for organizing information"
+component: "Card"
+---
+
+# Card
+
+The Card component is a versatile container that groups related content and actions. It provides a clean, organized way to display information with consistent spacing and styling.
+
+## Import
+
+```tsx
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@nui/ui";
+```
+
+## Usage
+
+### Basic Card
+
+```tsx
+<Card>
+  <CardContent>
+    <p>This is a basic card with some content.</p>
+  </CardContent>
+</Card>
+```
+
+### Card with Header
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card description goes here</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>Main content of the card.</p>
+  </CardContent>
+</Card>
+```
+
+### Complete Card
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>Project Overview</CardTitle>
+    <CardDescription>Summary of your project progress</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <div className="space-y-2">
+      <div className="flex justify-between">
+        <span>Tasks Completed</span>
+        <span className="font-semibold">12/20</span>
+      </div>
+      <div className="flex justify-between">
+        <span>Progress</span>
+        <span className="font-semibold">60%</span>
+      </div>
+    </div>
+  </CardContent>
+  <CardFooter>
+    <Button className="w-full">View Details</Button>
+  </CardFooter>
+</Card>
+```
+
+## Components
+
+### Card
+
+The main container component.
+
+| Prop        | Type        | Default | Description             |
+| ----------- | ----------- | ------- | ----------------------- |
+| `children`  | `ReactNode` | -       | The content of the card |
+| `className` | `string`    | -       | Additional CSS classes  |
+
+### CardHeader
+
+Container for the card's header content.
+
+### CardTitle
+
+The main title of the card.
+
+### CardDescription
+
+Descriptive text that appears below the title.
+
+### CardContent
+
+The main content area of the card.
+
+### CardFooter
+
+Container for actions or additional information at the bottom.
+
+## Examples
+
+### Interactive Card
+
+```tsx
+<Card className="hover:shadow-lg transition-shadow cursor-pointer">
+  <CardHeader>
+    <CardTitle>Interactive Card</CardTitle>
+    <CardDescription>This card responds to hover</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>Hover over this card to see the shadow effect.</p>
+  </CardContent>
+</Card>
+```
+
+### Card Grid
+
+```tsx
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <Card>
+    <CardHeader>
+      <CardTitle>Card 1</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p>First card content</p>
+    </CardContent>
+  </Card>
+  <Card>
+    <CardHeader>
+      <CardTitle>Card 2</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p>Second card content</p>
+    </CardContent>
+  </Card>
+  <Card>
+    <CardHeader>
+      <CardTitle>Card 3</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p>Third card content</p>
+    </CardContent>
+  </Card>
+</div>
+```
+
+## Accessibility
+
+- Uses semantic HTML structure
+- Proper heading hierarchy with CardTitle
+- Keyboard navigation support
+- Screen reader friendly
+- Maintains focus management

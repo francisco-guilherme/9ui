@@ -1,0 +1,92 @@
+---
+title: "Button"
+description: "Interactive button component with multiple variants and sizes"
+component: "Button"
+---
+
+# Button
+
+The Button component is a fundamental interactive element that triggers actions when clicked. It supports multiple variants, sizes, and states to fit various design needs.
+
+## Import
+
+```tsx
+import { Button } from "@nui/ui";
+```
+
+## Usage
+
+### Basic Button
+
+```tsx
+<Button>Click me</Button>
+```
+
+### Button Variants
+
+```tsx
+<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="destructive">Destructive</Button>
+```
+
+### Button Sizes
+
+```tsx
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+<Button size="lg">Large</Button>
+```
+
+### Disabled State
+
+```tsx
+<Button disabled>Disabled Button</Button>
+```
+
+### Loading State
+
+```tsx
+<Button loading>Loading...</Button>
+```
+
+## Props
+
+| Prop       | Type                                                                | Default     | Description                            |
+| ---------- | ------------------------------------------------------------------- | ----------- | -------------------------------------- |
+| `variant`  | `"primary" \| "secondary" \| "outline" \| "ghost" \| "destructive"` | `"primary"` | The visual style variant               |
+| `size`     | `"sm" \| "md" \| "lg"`                                              | `"md"`      | The size of the button                 |
+| `disabled` | `boolean`                                                           | `false`     | Whether the button is disabled         |
+| `loading`  | `boolean`                                                           | `false`     | Whether the button is in loading state |
+| `children` | `ReactNode`                                                         | -           | The content of the button              |
+| `onClick`  | `() => void`                                                        | -           | Click event handler                    |
+
+## Examples
+
+### Icon Button
+
+```tsx
+import { Plus } from "lucide-react";
+import { Button } from "@nui/ui";
+
+<Button>
+  <Plus className="w-4 h-4 mr-2" />
+  Add Item
+</Button>;
+```
+
+### Full Width Button
+
+```tsx
+<Button className="w-full">Full Width Button</Button>
+```
+
+## Accessibility
+
+- Uses semantic `button` element
+- Supports keyboard navigation
+- Proper focus management
+- Screen reader compatible
+- Follows ARIA button patterns
