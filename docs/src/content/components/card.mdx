@@ -1,0 +1,54 @@
+---
+title: "Card"
+description: "Used to group and present information in a structured box."
+---
+
+<Preview name="card-demo" />
+
+## Installation
+
+<Installation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/card.json
+```
+</div>
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<Source name="card" />
+
+</Steps>
+</Installation>
+
+## Usage
+
+```tsx title="Imports"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@9ui/uicard";
+```
+
+```tsx title="Anatomy"
+<Card>
+	<CardHeader>
+		<CardTitle />
+		<CardDescription />
+	</CardHeader>
+	<CardContent>
+	<CardFooter />
+</Card>
+```
+
+## Examples
+
+### With image
+
+<Preview name="card-with-image" />

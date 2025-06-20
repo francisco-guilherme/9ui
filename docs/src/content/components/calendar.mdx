@@ -1,0 +1,67 @@
+---
+title: "Calendar"
+description: "Provides a visual interface for date selection."
+links:
+  - label: "Docs"
+    href: "https://daypicker.dev/"
+---
+
+<Preview name="calendar-demo" />
+
+## Installation
+
+<Installation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/calendar.json
+```
+</div>
+
+<Steps>
+
+<Step>Install dependencies</Step>
+
+```bash title="Terminal"
+npm install react-day-picker
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<Source name="calendar" />
+
+</Steps>
+</Installation>
+
+## Usage
+
+```tsx title="Imports"
+import { Calendar } from "@9ui/uicalendar";
+```
+
+```tsx title="Anatomy"
+<Calendar />
+```
+
+## Examples
+
+### Single Date
+
+<Preview name="calendar-single" />
+
+---
+
+### Multiple Dates
+
+<Preview name="calendar-multiple" />
+
+---
+
+### Date Range
+
+<Preview name="calendar-range" />
+
+---
+
+### Disabled
+
+<Preview name="calendar-disabled" />

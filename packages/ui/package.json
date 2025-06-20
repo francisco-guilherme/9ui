@@ -1,0 +1,47 @@
+{
+  "name": "@9ui/ui",
+  "version": "0.1.0",
+  "description": "9ui React components library",
+  "main": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "bun run build && npx clean-package",
+    "postpublish": "npx clean-package restore"
+  },
+  "clean-package": "../../.config/clean-package.json",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "@base-ui-components/react": "1.0.0-alpha.8",
+    "@hookform/resolvers": "^3.9.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cmdk-base": "^0.0.4",
+    "dayjs": "^1.11.13",
+    "embla-carousel": "^8.5.2",
+    "embla-carousel-react": "^8.5.2",
+    "framer-motion": "^12.4.10",
+    "frimousse": "^0.1.0",
+    "input-otp": "^1.4.1",
+    "lucide-react": "^0.469.0",
+    "react-day-picker": "^9.5.0",
+    "react-hook-form": "^7.54.2",
+    "recharts": "^2.15.1",
+    "sonner": "^1.7.2",
+    "usehooks-ts": "^3.1.1",
+    "vaul-base": "^0.0.5",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "clean-package": "^2.2.0",
+    "tsup": "^8.3.5",
+    "typescript": "5.5.4"
+  }
+}

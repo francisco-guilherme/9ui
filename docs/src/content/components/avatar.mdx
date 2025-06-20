@@ -1,0 +1,49 @@
+---
+title: "Avatar"
+description: "Displays an avatar with a fallback."
+---
+
+<Preview name="avatar-demo" />
+
+## Installation
+
+<Installation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/avatar.json
+```
+</div>
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<Source name="avatar" />
+
+</Steps>
+</Installation>
+
+## Usage
+
+```tsx title="Imports"
+import { Avatar, AvatarFallback, AvatarImage } from "@9ui/uiavatar";
+```
+
+```tsx title="Anatomy"
+<Avatar>
+  <AvatarImage />
+  <AvatarFallback />
+</Avatar>
+```
+
+## Examples
+
+### Sizes
+
+<Preview name="avatar-sizes" />
+
+---
+
+### With Fallback
+
+<Preview name="avatar-fallback" />

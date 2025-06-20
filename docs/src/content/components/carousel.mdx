@@ -1,0 +1,82 @@
+---
+title: "Carousel"
+description: "A slider to display multiple items in a scrollable view."
+links:
+  - label: "Docs"
+    href: "https://www.embla-carousel.com/"
+---
+
+<Preview name="carousel-demo" />
+
+## Installation
+
+<Installation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/carousel.json
+```
+</div>
+
+<Steps>
+
+<Step>Install dependencies</Step>
+
+```bash title="Terminal"
+npm install embla-carousel-react embla-carousel
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<Source name="carousel" />
+
+</Steps>
+</Installation>
+
+## Usage
+
+```tsx title="Imports"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNavigation,
+  CarouselNext,
+  CarouselPrevious,
+} from "@9ui/uicarousel";
+```
+
+```tsx title="Anatomy"
+<Carousel>
+  <CarouselContent>
+    <CarouselItem />
+  </CarouselContent>
+  <CarouselNavigation>
+    <CarouselPrevious />
+    <CarouselNext />
+  </CarouselNavigation>
+</Carousel>
+```
+
+## Examples
+
+### Vertical
+
+<Preview name="carousel-vertical" />
+
+---
+
+### Multiple
+
+<Preview name="carousel-multiple" />
+
+---
+
+### Looped
+
+<Preview name="carousel-looped" />
+
+---
+
+### Thumbnail
+
+<Preview name="carousel-thumbnail" />

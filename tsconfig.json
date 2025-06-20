@@ -1,28 +1,11 @@
 {
-	"compilerOptions": {
-		"target": "ES2017",
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"allowJs": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"noEmit": true,
-		"esModuleInterop": true,
-		"module": "esnext",
-		"moduleResolution": "bundler",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"jsx": "preserve",
-		"incremental": true,
-		"plugins": [
-			{
-				"name": "next"
-			}
-		],
-		"paths": {
-			"@/*": ["./src/*"],
-			"@/registry/*": ["./src/__registry__/*"]
-		}
-	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-	"exclude": ["node_modules"]
+  "extends": "./.config/tsconfig.dev.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@9ui/ui": ["./packages/ui/src/index.ts"],
+      "@9ui/docs": ["docs/src/index.ts"]
+    }
+  },
+  "include": ["packages/**/*", "apps/**/*", ".config/**/*", "docs"]
 }

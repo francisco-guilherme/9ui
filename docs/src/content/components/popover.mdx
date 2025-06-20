@@ -1,0 +1,57 @@
+---
+title: "Popover"
+description: "A popup for displaying content."
+links:
+  - label: "Docs"
+    href: "https://base-ui.com/react/components/popover"
+---
+
+<Preview name="popover-demo" />
+
+## Installation
+
+<Installation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/popover.json
+```
+</div>
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<Source name="popover" />
+
+</Steps>
+</Installation>
+
+## Usage
+
+```tsx title="Imports"
+import {
+  Popover,
+  PopoverClose,
+  PopoverContent,
+  PopoverDescription,
+  PopoverFooter,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverTrigger,
+} from "@9ui/uipopover";
+```
+
+```tsx title="Anatomy"
+<Popover>
+  <PopoverTrigger />
+  <PopoverContent>
+    <PopoverHeader>
+      <PopoverTitle />
+      <PopoverDescription />
+    </PopoverHeader>
+    <PopoverFooter>
+      <PopoverClose />
+    </PopoverFooter>
+  </PopoverContent>
+</Popover>
+```

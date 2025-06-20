@@ -1,0 +1,50 @@
+---
+title: "Breadcrumbs"
+description: "Displays a navigation path for better context."
+---
+
+<Preview name="breadcrumbs-demo" />
+
+## Installation
+
+<Installation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/breadcrumbs.json
+```
+</div>
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<Source name="breadcrumbs" />
+
+</Steps>
+</Installation>
+
+## Usage
+
+```tsx title="Imports"
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@9ui/uibreadcrumbs";
+```
+
+```tsx title="Anatomy"
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem />
+    <BreadcrumbSeparator />
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+## Examples
+
+### Custom Separator
+
+<Preview name="breadcrumbs-custom-separator" />

@@ -1,0 +1,77 @@
+---
+title: "Sonner"
+description: "Displays a message to the user in a toast."
+links:
+  - label: "Docs"
+    href: "https://sonner.emilkowal.ski/getting-started"
+---
+
+<Preview name="sonner-demo" />
+
+## About
+
+[`Sonner`](https://sonner.emilkowal.ski) is created and maintained by [@emilkowalski\_](https://x.com/emilkowalski_).
+
+## Installation
+
+<Installation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/sonner.json
+```
+</div>
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<Source name="sonner" />
+
+<Step>Add Toaster to your app layout.</Step>
+
+```tsx title="app/layout.tsx"
+import { Toaster } from "@9ui/uisonner";
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <head />
+      <body>
+        <main>{children}</main>
+        <Toaster />
+      </body>
+    </html>
+  );
+}
+```
+
+</Steps>
+</Installation>
+
+## Usage
+
+```tsx title="Imports"
+import { toast } from "sonner";
+```
+
+```tsx title="Toast"
+toast("Toast is working!");
+```
+
+## Examples
+
+### Promise
+
+<Preview name="sonner-promise" />
+
+---
+
+### Action
+
+<Preview name="sonner-action" />
+
+---
+
+### Rich Colors
+
+<Preview name="sonner-rich-colors" />

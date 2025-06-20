@@ -1,0 +1,62 @@
+---
+title: "Directive Test"
+description: "Testing remark-directive functionality with code blocks"
+---
+
+# Directive Test
+
+This page demonstrates the use of remark-directive for enhanced code block functionality.
+
+## Traditional Code Block with Title
+
+```tsx title="components/button.tsx"
+export const Button = ({ children, ...props }) => {
+  return <button {...props}>{children}</button>;
+};
+```
+
+## Using Directive Syntax
+
+You can now use directive syntax for code blocks:
+
+```typescript title="utils/helpers.ts"
+export function cn(...classes: string[]) {
+  return classes.filter(Boolean).join(" ");
+}
+```
+
+## Command Block Example
+
+```bash title="Terminal"
+npm install remark-directive
+```
+
+## Multiple Examples
+
+### React Component
+
+```tsx title="hooks/use-counter.ts"
+import { useState } from "react";
+
+export function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+
+  const increment = () => setCount((c) => c + 1);
+  const decrement = () => setCount((c) => c - 1);
+  const reset = () => setCount(initialValue);
+
+  return { count, increment, decrement, reset };
+}
+```
+
+### Configuration File
+
+```json title="package.json"
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "dependencies": {
+    "remark-directive": "^4.0.0"
+  }
+}
+```

@@ -1,0 +1,77 @@
+---
+title: "Alert"
+description: "Used to highlight important messages."
+---
+
+<Preview name="alert-demo" />
+
+## Installation
+
+<Installation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/alert.json
+```
+</div>
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<Source name="alert" />
+
+</Steps>
+</Installation>
+
+## Usage
+
+```tsx title="Imports"
+import {
+  Alert,
+  AlertContent,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+} from "@9ui/uialert";
+```
+
+```tsx title="Anatomy"
+<Alert>
+  <AlertIcon />
+  <AlertContent>
+    <AlertTitle />
+    <AlertDescription />
+  </AlertContent>
+  <AlertAction />
+</Alert>
+```
+
+## Examples
+
+### Success
+
+<Preview name="alert-success" />
+
+---
+
+### Info
+
+<Preview name="alert-info" />
+
+---
+
+### Warning
+
+<Preview name="alert-warning" />
+
+---
+
+### Danger
+
+<Preview name="alert-danger" />
+
+---
+
+### With action
+
+<Preview name="alert-with-action" />

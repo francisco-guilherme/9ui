@@ -1,0 +1,72 @@
+---
+title: "Context Menu"
+description: "Used to provide options specific to an element or area."
+links:
+  - label: "Docs"
+    href: "https://base-ui.com/react/components/menu"
+---
+
+<Preview name="context-menu-demo" />
+
+## Installation
+
+<Installation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/context-menu.json
+```
+</div>
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<Source name="context-menu" />
+
+</Steps>
+</Installation>
+
+## Usage
+
+```tsx title="Imports"
+import {
+  ContextMenu,
+  ContextMenuCheckboxItem,
+  ContextMenuContent,
+  ContextMenuGroup,
+  ContextMenuGroupLabel,
+  ContextMenuItem,
+  ContextMenuItemShortcut,
+  ContextMenuRadioGroup,
+  ContextMenuRadioItem,
+  ContextMenuSeparator,
+  ContextMenuSubTrigger,
+  ContextMenuTrigger,
+} from "@9ui/uicontext-menu";
+```
+
+```tsx title="Anatomy"
+<ContextMenu>
+  <ContextMenuTrigger />
+  <ContextMenuContent>
+    <ContextMenuGroup>
+      <ContextMenuGroupLabel />
+      <ContextMenuItem>
+        <ContextMenuItemShortcut />
+      </ContextMenuItem>
+      <ContextMenu>
+        <ContextMenuSubTrigger />
+        <ContextMenuContent>
+          <ContextMenuItem />
+        </ContextMenuContent>
+      </ContextMenu>
+    </ContextMenuGroup>
+    <ContextMenuSeparator />
+    <ContextMenuCheckboxItem />
+    <ContextMenuSeparator />
+    <ContextMenuRadioGroup>
+      <ContextMenuRadioItem />
+    </ContextMenuRadioGroup>
+  </ContextMenuContent>
+</ContextMenu>
+```

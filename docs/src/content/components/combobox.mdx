@@ -1,0 +1,43 @@
+---
+title: "Combobox"
+description: "Autocomplete component for selecting items from a list."
+---
+
+<Preview name="combobox-demo" />
+
+## Installation
+
+The combobox component is a composition of the `Command` and `Popover` components.
+
+Follow installation instructions for the [`Command`](/docs/components/command) and [`Popover`](/docs/components/popover) components.
+
+## Usage
+
+```tsx title="Imports"
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@9ui/uicommand";
+import { Popover, PopoverContent, PopoverTrigger } from "@9ui/uipopover";
+```
+
+```tsx title="Anatomy"
+<Popover>
+  <PopoverTrigger />
+  <PopoverContent>
+    <Command>
+      <CommandInput />
+      <CommandList>
+        <CommandEmpty />
+        <CommandGroup>
+          <CommandItem />
+        </CommandGroup>
+      </CommandList>
+    </Command>
+  </PopoverContent>
+</Popover>
+```
