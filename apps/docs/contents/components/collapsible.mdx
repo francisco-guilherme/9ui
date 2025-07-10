@@ -1,0 +1,36 @@
+---
+title: "Collapsible"
+description: "Display content in a collapsible container."
+links:
+  - label: "Docs"
+    href: "https://base-ui.com/react/components/collapsible"
+---
+
+<Preview name="collapsible-demo" />
+
+## Installation
+
+<Installation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/collapsible.json
+```
+</div>
+</Installation>
+
+## Usage
+
+```tsx title="Imports"
+import {
+	Collapsible,
+	CollapsibleContent,
+	CollapsibleTrigger,
+} from "@/components/ui/collapsible"
+```
+
+```tsx title="Anatomy"
+<Collapsible>
+	<CollapsibleTrigger />
+	<CollapsibleContent />
+</Collapsible>
+```

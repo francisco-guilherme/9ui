@@ -1,28 +1,24 @@
-declare module "virtual:docs-route-meta" {
-  interface Route {
+declare module "virtual:docs-app" {
+  export const DocsApp: React.ComponentType;
+}
+
+declare module "virtual:docs-contents" {
+  export interface Content {
     path: string;
     element: React.ComponentType;
-    meta: Record<string, any>;
+    meta: Record<string, unknown>;
   }
 
-  export const routes: Route[];
+  export const contents: Content[];
 }
 
-declare module "virtual:docs-sidebar" {
-  interface SidebarItem {
-    title: string;
-    path: string;
+declare module "virtual:docs-demos" {
+  export interface Demo {
+    Component: React.ComponentType | null;
+    code: string;
+    loading: boolean;
+    error: string | null;
   }
 
-  export const sidebar: SidebarItem[];
-}
-
-declare module "virtual:docs-layout" {
-  const Layout: React.ComponentType;
-  export const Layout;
-}
-
-declare module "virtual:docs-app" {
-  const Docs: React.ComponentType;
-  export const Docs;
+  export const loadDemo: (name: string) => Promise<Demo>;
 }

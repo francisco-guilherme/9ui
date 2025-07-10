@@ -4,7 +4,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@nui/*": ["packages/*/src"]
+      "@nui/*": ["packages/*/src"],
+      "@/*": ["packages/core/src/*", "packages/vite-plugin-docs/src/*"]
     }
   },
   "include": ["packages", "apps"],

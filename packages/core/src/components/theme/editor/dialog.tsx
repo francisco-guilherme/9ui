@@ -92,13 +92,12 @@ export function ThemeEditorDialog({
   );
 }
 
-function ThemeColorPreview({
-  color,
-  variableName,
-}: {
+interface ThemeColorPreviewProps {
   color: string;
   variableName: string;
-}) {
+}
+
+function ThemeColorPreview({ variableName }: ThemeColorPreviewProps) {
   return (
     <div
       className="size-5 rounded border border-border"

@@ -1,5 +1,6 @@
-import type { NavItem } from "../../../types/sidebar";
-import { cn } from "../../../utils/cn";
+import type { NavItem } from "@/types/sidebar";
+import { cn } from "@/utils/cn";
+
 import { SidebarNavItem } from "./nav-item";
 
 export interface SidebarContentProps {

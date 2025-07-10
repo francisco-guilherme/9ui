@@ -1,54 +1,101 @@
-import path from "path";
+import { resolve } from "path";
 import mdx from "@mdx-js/rollup";
+import remarkFrontmatter from "remark-frontmatter";
+import remarkMdxFrontmatter from "remark-mdx-frontmatter";
+import type { PluggableList } from "unified";
 import type { Plugin } from "vite";
 
-import { RouteData } from "./types";
-import {
-  generateRouteMetaModule,
-  generateSidebarModule,
-  scanRoutes,
-} from "./utils";
+import { ContentMetadata, DemoMetaData } from "./types/metadata";
+import { scanContents, scanDemos } from "./utils/content";
+import { generateContentsModule, generateDemosModule } from "./utils/modules";
 
 interface DocsPluginOptions {
-  contentDir?: string;
-  tailwindSources?: string[];
+  contentsDir?: string;
+  demosDir?: string;
+  verbose?: boolean;
+  mdxPlugins?: {
+    remarkPlugins?: PluggableList;
+    rehypePlugins?: PluggableList;
+  };
 }
 
-const virtualModuleMap = {
-  "virtual:docs-route-meta": "\0virtual:docs-route-meta",
-  "virtual:docs-sidebar": "\0virtual:docs-sidebar",
-  "virtual:docs-layout": path.resolve(__dirname, "./components/Layout.tsx"),
-  "virtual:docs-app": path.resolve(__dirname, "./components/Docs.tsx"),
+const VIRTUAL_MODULES = {
+  "virtual:docs-contents": "\0virtual:docs-contents",
+  "virtual:docs-demos": "\0virtual:docs-demos",
+  "virtual:docs-app": resolve(__dirname, "./docs.tsx"),
 } as const;
 
 export default function docsPlugin(options: DocsPluginOptions = {}): Plugin[] {
-  const contentDir = options.contentDir ?? "content";
+  const {
+    contentsDir = "contents",
+    demosDir = "demos",
+    verbose = false,
+    mdxPlugins = {},
+  } = options;
 
-  let routeData: RouteData[] = [];
+  let contents: ContentMetadata[] = [];
+  let demos: DemoMetaData[] = [];
+
+  const scanAndUpdate = async (configRoot: string) => {
+    const [newContents, newDemos] = await Promise.all([
+      scanContents(resolve(configRoot, contentsDir)),
+      scanDemos(resolve(configRoot, demosDir)),
+    ]);
+
+    contents = newContents;
+    demos = newDemos;
+
+    if (verbose) {
+      console.log(
+        `[docs-plugin] Scanned ${contents.length} contents, ${demos.length} demos`,
+      );
+    }
+  };
 
   return [
-    mdx({ jsxImportSource: "react" }),
+    mdx({
+      providerImportSource: "@mdx-js/react",
+      remarkPlugins: [
+        remarkFrontmatter,
+        [remarkMdxFrontmatter, { name: "frontmatter" }],
+        ...(mdxPlugins.remarkPlugins ?? []),
+      ],
+      rehypePlugins: [...(mdxPlugins.rehypePlugins ?? [])],
+    }),
 
     {
       name: "vite-plugin-docs",
 
-      async configResolved(resolvedConfig) {
-        const resolvedPagesDir = path.resolve(resolvedConfig.root, contentDir);
-        routeData = await scanRoutes(resolvedPagesDir);
+      async configResolved(config) {
+        await scanAndUpdate(config.root);
       },
 
       resolveId(id) {
-        return virtualModuleMap[id as keyof typeof virtualModuleMap] ?? null;
+        return VIRTUAL_MODULES[id as keyof typeof VIRTUAL_MODULES];
       },
 
       load(id) {
         switch (id) {
-          case virtualModuleMap["virtual:docs-route-meta"]:
-            return generateRouteMetaModule(routeData);
-          case virtualModuleMap["virtual:docs-sidebar"]:
-            return generateSidebarModule(routeData);
+          case VIRTUAL_MODULES["virtual:docs-contents"]:
+            return generateContentsModule(contents);
+          case VIRTUAL_MODULES["virtual:docs-demos"]:
+            return generateDemosModule(demos);
           default:
             return null;
+        }
+      },
+
+      async handleHotUpdate(ctx) {
+        if (ctx.file.includes(contentsDir) || ctx.file.includes(demosDir)) {
+          // Re-scan when files change
+          await scanAndUpdate(ctx.server.config.root);
+
+          // Invalidate virtual modules
+          const modules = Object.values(VIRTUAL_MODULES)
+            .map((id) => ctx.server.moduleGraph.getModuleById(id))
+            .filter((mod): mod is import("vite").ModuleNode => Boolean(mod));
+
+          return modules;
         }
       },
     },

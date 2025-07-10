@@ -10,11 +10,15 @@
     "postpack": "clean-package restore"
   },
   "dependencies": {
+    "@mdx-js/react": "^3.1.0",
     "@mdx-js/rollup": "^3.1.0",
     "@nui/core": "*",
     "fast-glob": "^3.3.3",
     "gray-matter": "^4.0.3",
-    "react-router-dom": "^7.6.3"
+    "react-error-boundary": "^6.0.0",
+    "react-router-dom": "^7.6.3",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx-frontmatter": "^5.2.0"
   },
   "peerDependencies": {
     "react": "^19.1.0",

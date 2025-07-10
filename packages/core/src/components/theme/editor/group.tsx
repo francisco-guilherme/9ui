@@ -158,13 +158,12 @@ function ThemeVariableItem({
   );
 }
 
-function ThemeColorPreview({
-  color,
-  variableName,
-}: {
+interface ThemeColorPreviewProps {
   color: string;
   variableName: string;
-}) {
+}
+
+function ThemeColorPreview({ variableName }: ThemeColorPreviewProps) {
   return (
     <div
       className="size-6 rounded border border-border/50 group-hover:scale-105 transition-transform"
